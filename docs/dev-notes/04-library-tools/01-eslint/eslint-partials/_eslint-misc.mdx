@@ -1,0 +1,59 @@
+import CodeBlock from "@theme/CodeBlock";
+import ESLintProjectDocs from "!!raw-loader!./_eslint-project-docs.md";
+
+## Print Full Config
+
+If you want to see the final rule set, all plugins, and names of all extended configs, use one of the following commands:
+
+- Using npx: `npx eslint --print-config src/file.tsx > tmp.config.json`
+
+- Using pnpx: `pnpx eslint --print-config src/file.tsx > tmp.config.json`
+
+## VS Code Extension
+
+Add the following to the `.vscode/extensions.json` file.
+
+```json title=".vscode/extensions.json"
+{
+  "recommendations": [
+    . . .
+    "dbaeumer.vscode-eslint",
+  ]
+}
+```
+
+## VS Code Settings
+
+Add the following to the `.vscode/settings.json` file.
+
+```json title=".vscode/settings.json"
+{
+  "eslint.useFlatConfig": true
+}
+```
+
+## Project Documentation
+
+### 1. Update `01-scripts.md` Documentation
+
+Add or update the following to the `docusaurus/docs/01-scripts.md` documentation
+
+```md title="docusaurus/docs/01-scripts.md"
+| `pnpm lint` | Runs ESLint for all files that are NOT included in the `.gitignore` |
+```
+
+### 2. Update `98-vs-code-extensions.md` Documentation
+
+Add the follow to the `docusaurus/docs/98-vs-code-extensions.md` documentation
+
+```md title="docusaurus/docs/98-vs-code-extensions.md"
+| [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | Provides immediate linting when writing code |
+```
+
+### 3. Create `95-eslint.md` Documentation
+
+Create a `docusaurus/docs/95-eslint.md` file and add the following:
+
+<CodeBlock language="markdown" title="docusaurus/docs/95-eslint.md">
+  {ESLintProjectDocs}
+</CodeBlock>
