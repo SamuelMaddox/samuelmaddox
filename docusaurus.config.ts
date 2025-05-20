@@ -73,28 +73,32 @@ const config: Config = {
           items: [
             {
               label: "Developer Notes",
-              to: "/dev-notes",
+              to: "/dev-notes/index",
             },
           ],
         },
         {
           title: "Portfolio",
           items: [
+            // {
+            //   label: "Health Plan Calculator",
+            //   to: "https://github.com/samuelmaddox/",
+            // },
             {
-              label: "Health Plan Calculator",
-              to: "https://github.com/samuelmaddox/",
+              label: "New Probe Request",
+              to: "https://samuelmaddox.github.io/projects/new-probe-request",
             },
             {
-              label: "Event Judging",
-              to: "https://github.com/samuelmaddox/",
+              label: "Hackathon Judging",
+              to: "https://samuelmaddox.github.io/projects/hackathon-judging",
             },
             {
               label: "Hackathon Registration",
-              to: "https://github.com/samuelmaddox/",
+              to: "https://samuelmaddox.github.io/projects/hackathon-registration",
             },
             {
-              label: "URL Shortener",
-              to: "https://github.com/samuelmaddox/",
+              label: "Fancy URL Shortener",
+              to: "https://samuelmaddox.github.io/projects/fancy-url-shortener",
             },
           ],
         },

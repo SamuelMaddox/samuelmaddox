@@ -1,8 +1,8 @@
 # Samuel Maddox
 
 - 🏠 **Location**: Columbus, OH 43016
-- 💼 **LinkedIn**: linkedin.com/in/samuelrmaddox
-- 🌐 **Website**: samuelmaddox.github.io
+- 💼 **LinkedIn**: [linkedin.com/in/samuelrmaddox](https://linkedin.com/in/samuelrmaddox)
+- 🌐 **Website**: [samuelmaddox.github.io](https://samuelmaddox.github.io)
 
 ## LEAD FULL STACK SOFTWARE ENGINEER
 
