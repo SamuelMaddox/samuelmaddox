@@ -1,0 +1,75 @@
+import CodeBlock from "@theme/CodeBlock";
+import ESLintProjectDocs from "!!raw-loader!./_eslint-project-docs.md";
+
+## Print Full Config
+
+If you want to see the final rule set, all plugins, and names of all extended configs, use one of the following commands:
+
+- Using npx: `npx eslint --print-config src/file.tsx > tmp.config.json`
+
+- Using pnpx: `pnpx eslint --print-config src/file.tsx > tmp.config.json`
+
+## VS Code Extension
+
+Add the following to the `.vscode/extensions.json` file.
+
+```json title=".vscode/extensions.json"
+{
+  "recommendations": [
+    . . .
+    "dbaeumer.vscode-eslint",
+  ]
+}
+```
+
+## VS Code Settings
+
+Add the following to the `.vscode/settings.json` file.
+
+```json title=".vscode/settings.json"
+{
+  "eslint.useFlatConfig": true
+}
+```
+
+## Project Documentation
+
+### Update `01-scripts.md` Documentation
+
+Add or update the following to the `docusaurus/docs/01-scripts.md` documentation
+
+```md title="docusaurus/docs/01-scripts.md"
+| `pnpm lint` | Runs ESLint for all files that are NOT included in the `.gitignore` |
+```
+
+### Create `02-code-quality/02-eslint.md` Documentation
+
+Create a `docusaurus/docs/02-code-quality/02-eslint.md` file and add the following:
+
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/02-code-quality/02-eslint.md"
+>
+  {ESLintProjectDocs}
+</CodeBlock>
+
+### Update `98-vs-code/02-vs-code-extensions.md` Documentation
+
+Add the follow to the `docusaurus/docs/98-vs-code/02-vs-code-extensions.md` documentation
+
+```md title="docusaurus/docs/98-vs-code/02-vs-code-extensions.md"
+| [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | Provides immediate linting when writing code |
+```
+
+### Create `99-articles/why-you-should-use-string-literal-unions` Article
+
+:::note
+I'm paranoid about broken links due to relevant articles being removed. Therefore, when I find an article that I think is relevant to a project, I like to save a copy of that article within the project's documentation.
+:::
+
+:::info
+The `02-code-quality/02-eslint.md` documentation links to the following article
+:::
+
+1. Create a `docusaurus/docs/99-articles/why-you-should-use-string-literal-unions` directory.
+2. Copy the [Why You Should Use String Literal Unions Over Enums in TypeScript](https://github.com/SamuelMaddox/samuelmaddox/tree/main/docs/articles/why-you-should-use-string-literal-unions-over-enums-in-typescript) article contents into the above directory.

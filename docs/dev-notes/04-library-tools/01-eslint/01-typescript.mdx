@@ -1,0 +1,78 @@
+---
+title: TypeScript
+---
+
+import InstallESLint from "./eslint-partials/_install-eslint.md";
+import ConfigTip from "./eslint-partials/_config-tip.md";
+import CustomRules from "./eslint-partials/_custom-rules.md";
+import DocusaurusPlugin from "./eslint-partials/_docusaurus.md";
+import ESLintMisc from "./eslint-partials/_eslint-misc.mdx";
+
+# ESLint TypeScript
+
+<InstallESLint />
+
+## Configure
+
+<ConfigTip />
+
+Install the following plugins and configs:
+
+```terminal
+pnpm add --save-dev @eslint/compat @eslint/js @eslint/css @eslint/json @eslint/markdown typescript-eslint
+```
+
+Modify the `eslint.config.mjs` file to match the following:
+
+```ts title="eslint.config.mjs"
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import js from "@eslint/js";
+// import css from "@eslint/css"; // 🟡 TODO: Does this work yet for TailwindCSS v4.0?
+import json from "@eslint/json";
+import markdown from "@eslint/markdown";
+import tseslint from "typescript-eslint";
+
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+
+export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+  {
+    files: ["**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}"],
+    extends: [js.configs.recommended, tseslint.configs.recommended],
+  },
+  // 🟡 TODO: If you are NOT using TailwindCSS then it should be safe to uncomment this object and
+  // remove the `languageOptions` property
+  // 🟡 TODO: Does this work yet for TailwindCSS v4.0?
+  // {
+  //   files: ["**/*.css"],
+  //   language: "css/css",
+  //   languageOptions: {
+  //     tolerant: true, // 🟡 This may be required due to custom syntax that TailwindCSS uses
+  //     customSyntax: tailwindSyntax, // 🟡 This has not been updated yet for TailwindCSS v4.0
+  //   },
+  //   extends: [css.configs.recommended],
+  // },
+  {
+    files: ["**/*.json"],
+    ignores: ["package-lock.json"],
+    language: "json/json",
+    extends: [json.configs.recommended],
+  },
+  {
+    files: ["**/*.md"],
+    extends: [markdown.configs.recommended],
+    language: "markdown/gfm", // 🟡 Optional, include this property if using Github-flavored markdown
+    rules: {
+      "markdown/no-missing-label-refs": "off", // 🟡 Optional, this rule doesn't work with Github-flavored markdown alerts
+    },
+  },
+]);
+```
+
+<CustomRules />
+
+<DocusaurusPlugin />
+
+<ESLintMisc />

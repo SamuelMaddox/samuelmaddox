@@ -1,0 +1,109 @@
+---
+title: NEXT.js
+---
+
+import ConfigTip from "./eslint-partials/_config-tip.md";
+import CustomRules from "./eslint-partials/_custom-rules.md";
+import DocusaurusPlugin from "./eslint-partials/_docusaurus.md";
+import ESLintMisc from "./eslint-partials/_eslint-misc.mdx";
+
+# ESLint NEXT.js
+
+## Update NextConfig
+
+Update the `next.config.ts` file with the following so files at the root level of the project are including when linting:
+
+```ts title="next.config.ts"
+const nextConfig: NextConfig = {
+  eslint: {
+    dirs: ["."],
+  },
+};
+```
+
+## Modify ESLint Config
+
+<ConfigTip />
+
+:::warning
+ESLint v9 has transitioned to using [Flat Configuration Files](https://eslint.org/docs/latest/use/configure/configuration-files). `eslint-plugin-next` is still transitioning to this new configuration format. ESLint's [`FlatCompat`](https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config) utility is necessary to translate the `eslintrc` format into flat config format.
+
+(Last validated on 04/09/2025)
+:::
+
+:::info
+As of `April 10th, 2025`
+
+- The `next` config extends `eslint-plugin-react`, `eslint-plugin-react-hooks`
+- The `next/core-web-vitals` extends the `next` config
+- The `next/typescript` is a wrapper config for `typescript-eslint`
+- `@eslint/js` is NOT included in any of the `next` lint configs
+
+:::
+
+Install the following plugins and configs:
+
+```terminal
+pnpm add --save-dev @eslint/compat @eslint/js @eslint/css @eslint/json @eslint/markdown
+```
+
+Modify the `eslint.config.mjs` file to match the following:
+
+```ts title="eslint.config.mjs"
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
+// import css from "@eslint/css"; // 🟡 TODO: Does this work yet for TailwindCSS v4.0?
+import json from "@eslint/json";
+import markdown from "@eslint/markdown";
+
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+});
+
+export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+  {
+    files: ["**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}"],
+    extends: [
+      js.configs.recommended,
+      compat.extends("next/core-web-vitals", "next/typescript"),
+    ],
+  },
+  // 🟡 TODO: If you are NOT using TailwindCSS then it should be safe to uncomment this object and
+  // remove the `languageOptions` property
+  // 🟡 TODO: Does this work yet for TailwindCSS v4.0?
+  // {
+  //   files: ["**/*.css"],
+  //   language: "css/css",
+  //   languageOptions: {
+  //     tolerant: true, // 🟡 This may be required due to custom syntax that TailwindCSS uses
+  //     customSyntax: tailwindSyntax, // 🟡 This has not been updated yet for TailwindCSS v4.0
+  //   },
+  //   extends: [css.configs.recommended],
+  // },
+  {
+    files: ["**/*.json"],
+    ignores: ["package-lock.json"],
+    language: "json/json",
+    extends: [json.configs.recommended],
+  },
+  {
+    files: ["**/*.md"],
+    extends: [markdown.configs.recommended],
+    language: "markdown/gfm", // 🟡 Optional, include this property if using Github-flavored markdown
+    rules: {
+      "markdown/no-missing-label-refs": "off", // 🟡 Optional, this rule doesn't work with Github-flavored markdown alerts
+    },
+  },
+]);
+```
+
+<CustomRules />
+
+<DocusaurusPlugin />
+
+<ESLintMisc />
