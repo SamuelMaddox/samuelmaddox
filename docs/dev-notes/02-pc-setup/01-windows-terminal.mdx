@@ -1,0 +1,107 @@
+import TerminalTabCompletion from "./terminal-partials/_terminal-tab-completion.md";
+import TerminalPowerlevel10kGuide from "./terminal-partials/_terminal-powerlevel10k-guide.md";
+import TerminalPowerlevel10kConfig from "./terminal-partials/_terminal-powerlevel10k-config.md";
+
+# Windows Terminal
+
+![PowerLevel10k](./assets/powerlevel-10k.png)
+
+## Add Git Bash to Windows Terminal
+
+1. Open Windows Terminal. From the drop down menu (look for the `˅` symbol next to the tabs) select `Settings`
+2. In the left menu under Profiles select `Add new`
+3. Click on `+ New Empty Profile`
+4. In the `name` field enter `Git Bash`
+5. In the `Command line` field enter `C:\Program Files\Git\bin\bash.exe`
+6. Under `Starting directory` unselect the `Use parent process directory` checkbox. `%USERPROFILE%` should populate the field instead
+7. In the `Icon` field enter `C:\Program Files\Git\mingw64\share\git\git-for-windows.ico`
+8. Click `Save`
+9. In the left menu at the top select `Startup`
+10. Update the `Default profile` field to `Git Bash`
+11. In the left menu at the bottom select `Open JSON File`
+12. Find the `Profile.list` array and change the ordering to your preference
+
+## Add Brogrammer Color Theme
+
+1. Open Windows Terminal. From the drop down menu (look for the `˅` symbol next to the tabs) select `Settings`
+2. In the left menu at the bottom select `Open JSON File`
+3. Find the `schemes` array and add the following object:
+
+   ```json
+   {
+     "name": "Brogrammer",
+
+     "cursorColor": "#B9B9B9",
+     "selectionBackground": "#45A2D2",
+
+     "background": "#131313",
+     "foreground": "#D6DBE5",
+
+     "black": "#1F1F1F",
+     "blue": "#2A84D2",
+     "cyan": "#1081D6",
+     "green": "#2DC55E",
+     "purple": "#4E5AB7",
+     "red": "#F81118",
+     "white": "#D6DBE5",
+     "yellow": "#ECBA0F",
+     "brightBlack": "#D6DBE5",
+     "brightBlue": "#1081D6",
+     "brightCyan": "#0F7DDB",
+     "brightGreen": "#1DD361",
+     "brightPurple": "#5350B9",
+     "brightRed": "#DE352E",
+     "brightWhite": "#FFFFFF",
+     "brightYellow": "#F3BD09"
+   }
+   ```
+
+4. Find the `Profiles.list array` and add the following properties to the profile objects that you want the `Brogrammer` theme applied to:
+
+   ```json
+   "colorScheme" : "Brogrammer"
+   "cursorShape" : "filledBox"
+   ```
+
+   The profile should look similar to this:
+
+   ```json
+   {
+     "colorScheme": "Brogrammer",
+     "cursorShape": "filledBox",
+     "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+     "guid": "{575851b6-d773-46a1-9a47-6ef3249e1942}",
+     "hidden": false,
+     "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+     "name": "Git Bash"
+   },
+   ```
+
+## Add GitHub Copilot Chat for Windows Terminal
+
+See [GitHub Copilot in Windows Terminal](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-windows-terminal)
+
+## Install Oh My Zsh
+
+1. Download the latest MSYS2 zsh package from the MSYS2 package repository https://packages.msys2.org/package/zsh?repo=msys&variant=x86_64. The file will be named something along the lines of `zsh-5.8-5-x86_64.pkg.tar.zst`
+2. Extract the contents of the archive (which should include etc and usr folders) into your Git Bash installation directory. This is likely to be under `C:\Program Files\Git`. Merge the contents of the folder if asked (no files should be getting overridden).
+3. In Git Bash run the follow to verify the installation:
+
+   ```bash
+   zsh --version
+   ```
+
+4. Configure Zsh as the default shell by appending the following to your `~/.bashrc` file:
+
+   ```bash
+   if [ -t 1 ]; then
+     exec zsh
+   fi
+   ```
+
+<TerminalTabCompletion />
+<TerminalPowerlevel10kGuide />
+:::tip
+For Windows Terminal, go to _`settings -> \{ profile \} -> Appearance`_ and change the font face to the font that the powerlevel10k instructions said to download.
+:::
+<TerminalPowerlevel10kConfig />
