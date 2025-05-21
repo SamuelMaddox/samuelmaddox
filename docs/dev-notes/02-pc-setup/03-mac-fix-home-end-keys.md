@@ -1,6 +1,6 @@
 # Mac Fix Home & End Keys
 
-1. Navigate to `~/Library` and creat a new folder called `KeyBindings`.
+1. Navigate to `~/Library` and create a new folder called `KeyBindings`.
 2. Navigate into the `~/Library/KeyBindings` folder and create a new file called `DefaultKeyBinding.dict`.
 3. Add the following commands to that file:
 
