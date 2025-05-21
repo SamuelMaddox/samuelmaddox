@@ -1,6 +1,6 @@
 # VS Code
 
-## Vs Code Extensions
+## VS Code Extensions
 
 - Angular Language Service
 - Auto Close Tag
@@ -36,7 +36,7 @@
 - WSL (Microsoft)
 - YAML
 
-## Vs Code Settings
+## VS Code Settings
 
 ```json
 {

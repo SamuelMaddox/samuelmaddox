@@ -1,3 +1,3 @@
-# 🚧 VUE
+# 🚧 Vue
 
 ## Guide coming soon™
