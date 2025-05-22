@@ -12,16 +12,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Ensure PR branch hasn't diverged from main
+      - name: Ensure main branch is not ahead
         run: |
-          git fetch origin main
-          git status
-          git rev-list --left-only --count origin/main...HEAD
-          # Check if main has commits not in HEAD
-          if [ "$(git rev-list --left-only --count origin/main...HEAD)" -ne 0 ]; then
+          gh api repos/${{ github.repository }}/compare/main...${{ github.head_ref }} > compare.json
+          behind_by=$(jq '.behind_by' compare.json)
+          if [ "$behind_by" -gt 0 ]; then
             echo "Error: main branch is ahead of this branch. Please rebase or merge main into your branch." >&2
             exit 1
           fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
       - name: Set up Node.js
         uses: actions/setup-node@v4
