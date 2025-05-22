@@ -6,7 +6,7 @@
 
 ## LEAD FULL STACK SOFTWARE ENGINEER
 
-8+ years of experience leading teams in delivering business-critical applications. Skilled at breaking down complex features and designs into detailed but manageable stories and tasks. Adept at developing code that follows SOLID principles. Committed to encouraging high code quality using branch policies. Capable of building CI/CD pipelines to streamline testing and deployment of applications.
+8+ years of experience leading teams in delivering business-critical applications. Adept at developing code that follows SOLID principles. Committed to encouraging high code quality using branch policies. Capable of building CI/CD pipelines to streamline testing and deployment of applications. Skilled at breaking down complex features and designs into detailed but manageable stories and tasks.
 
 ## SKILLS
 
@@ -32,8 +32,8 @@ Launch offers agile software development teams that assist organizations in desi
 
 #### New Probe Request | Client – Bio-Techne
 
-Video - [https://youtube.com/watch?v=CYCLvpgWqqs](https://youtube.com/watch?v=CYCLvpgWqqs)\
-Screenshots - TODO:
+Video - [youtube.com/watch?v=CYCLvpgWqqs](https://youtube.com/watch?v=CYCLvpgWqqs)\
+Screenshots - [samuelmaddox.github.io/projects/new-probe-request](https://samuelmaddox.github.io/projects/new-probe-request)
 
 - ℹ️ **Problem**: Customers often submitted invalid or incomplete requests for new probes. Additionally, requesting many probes requires multiple submissions of the same form.
 - 💡 **Solution**: New form guides customers through the probe design process. Values for later fields are enabled based on values from previous fields. The new form also allows bulk for bulk upload from CSV file.
@@ -63,7 +63,7 @@ Screenshots - TODO:
 
 #### Hackathon Judging
 
-Screenshots - TODO:
+Screenshots - [samuelmaddox.github.io/projects/hackathon-judging](https://samuelmaddox.github.io/projects/hackathon-judging)
 
 - ℹ️ **Problem**: The CIO and other executives desired to be judges for the final round of ranking; but their schedules were fixed. Previous hackathons had unpredictable timelines due to inefficiencies with the manual judging process.
 - 💡 **Solution**: During judging, the app would display on the main stage what cluster a team was in, what stage the cluster would be presenting on, which clusters are currently presenting, and the winner of each cluster.
@@ -75,7 +75,7 @@ Screenshots - TODO:
 
 #### Hackathon Registration
 
-Screenshots - TODO:
+Screenshots - [samuelmaddox.github.io/projects/hackathon-registration](https://samuelmaddox.github.io/projects/hackathon-registration)
 
 - ℹ️ **Problem**: Many interested participants registered for the previous hackathons without belonging to a team.
 - 💡 **Solution**: Require team leaders to register a team, and each participant individually verify they are participating before the app marks their team as registered.
@@ -87,7 +87,7 @@ Screenshots - TODO:
 
 #### Fancy URL Shortener
 
-Screenshots - TODO:
+Screenshots - [samuelmaddox.github.io/projects/fancy-url-shortner](https://samuelmaddox.github.io/projects/fancy-url-shortner)
 
 - ℹ️ **Problem**: An internal url shortening app was built using SharePoint Framework. The product desired a rebuild of the application utilizing more widely adopted technologies.
 - 💡 **Solution**: Sharepoint On-Premise was being migrated to SharePoint 365, providing an opportunity for a rewrite using MEAN stack technologies.
