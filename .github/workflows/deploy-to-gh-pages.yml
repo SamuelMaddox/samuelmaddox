@@ -27,4 +27,4 @@ jobs:
           external_repository: SamuelMaddox/samuelmaddox.github.io
           publish_branch: main
           publish_dir: ./build
-          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
