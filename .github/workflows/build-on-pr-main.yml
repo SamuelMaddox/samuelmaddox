@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Ensure PR branch hasn't diverged from main
         run: |
-          git status
           git fetch origin main
+          git status
+          git rev-list --left-only --count origin/main...HEAD
           # Check if main has commits not in HEAD
           if [ "$(git rev-list --left-only --count origin/main...HEAD)" -ne 0 ]; then
             echo "Error: main branch is ahead of this branch. Please rebase or merge main into your branch." >&2
