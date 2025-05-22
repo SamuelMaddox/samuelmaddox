@@ -34,7 +34,7 @@ Add the following to the `.vscode/settings.json` file.
 
 ## Project Documentation
 
-### 1. Update `01-scripts.md` Documentation
+### Update `01-scripts.md` Documentation
 
 Add or update the following to the `docusaurus/docs/01-scripts.md` documentation
 
@@ -42,18 +42,34 @@ Add or update the following to the `docusaurus/docs/01-scripts.md` documentation
 | `pnpm lint` | Runs ESLint for all files that are NOT included in the `.gitignore` |
 ```
 
-### 2. Update `98-vs-code-extensions.md` Documentation
+### Create `02-code-quality/02-eslint.md` Documentation
 
-Add the follow to the `docusaurus/docs/98-vs-code-extensions.md` documentation
+Create a `docusaurus/docs/02-code-quality/02-eslint.md` file and add the following:
 
-```md title="docusaurus/docs/98-vs-code-extensions.md"
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/02-code-quality/02-eslint.md"
+>
+  {ESLintProjectDocs}
+</CodeBlock>
+
+### Update `98-vs-code/02-vs-code-extensions.md` Documentation
+
+Add the follow to the `docusaurus/docs/98-vs-code/02-vs-code-extensions.md` documentation
+
+```md title="docusaurus/docs/98-vs-code/02-vs-code-extensions.md"
 | [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | Provides immediate linting when writing code |
 ```
 
-### 3. Create `95-eslint.md` Documentation
+### Create `99-articles/why-you-should-use-string-literal-unions` Article
 
-Create a `docusaurus/docs/95-eslint.md` file and add the following:
+:::note
+I'm paranoid about broken links due to relevant articles being removed. Therefore, when I find an article that I think is relevant to a project, I like to save a copy of that article within the project's documentation.
+:::
 
-<CodeBlock language="markdown" title="docusaurus/docs/95-eslint.md">
-  {ESLintProjectDocs}
-</CodeBlock>
+:::info
+The `02-code-quality/02-eslint.md` documentation links to the following article
+:::
+
+1. Create a `docusaurus/docs/99-articles/why-you-should-use-string-literal-unions` directory.
+2. Copy the [Why You Should Use String Literal Unions Over Enums in TypeScript](https://github.com/SamuelMaddox/samuelmaddox/tree/main/docs/articles/why-you-should-use-string-literal-unions-over-enums-in-typescript) article contents into the above directory.

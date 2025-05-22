@@ -1,11 +1,11 @@
 ---
-title: 🚧 Library Setup
+title: Library Setup
 ---
 
 import CodeBlock from "@theme/CodeBlock";
 import TailwindCSSProjectDocs from "!!raw-loader!./tailwind-css-partials/_tailwind-css-project-docs.md";
 
-# 🚧 Tailwind CSS
+# Tailwind CSS
 
 ## Installation
 
@@ -81,7 +81,7 @@ As of 04/08/2025
 
 :::
 
-Install `@eslint/eslintrc` by running this command:
+Install `eslint-plugin-tailwindcss` by running this command:
 
 ```terminal
 pnpm add --save-dev eslint-plugin-tailwindcss
@@ -121,24 +121,43 @@ export default defineConfig([
 
 ## Project Documentation
 
-### 1. Update `98-vs-code-extensions.md` Documentation
+### Update `98-vs-code/02-vs-code-extensions.md` Documentation
 
-Add the follow to the `docusaurus/docs/98-vs-code-extensions.md` documentation
+Add the following to the `docusaurus/docs/98-vs-code/02-vs-code-extensions.md` documentation
 
-```md title="docusaurus/docs/98-vs-code-extensions.md"
+```md title="docusaurus/docs/98-vs-code/02-vs-code-extensions.md"
 | [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) | Enhances the Tailwind development experience by providing Visual Studio Code users with advanced features such as autocomplete, syntax highlighting, and linting |
 ```
 
-### 2. Create `05-tailwind-css.md` Documentation
+### Create `03-libraries-tools/01-tailwind-css.md` Documentation
 
-Create a `docusaurus/docs/05-tailwind-css.md` file and add the following:
-
-<CodeBlock language="markdown" title="docusaurus/docs/95-eslint.md">
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/03-libraries-tools/01-tailwind-css.md"
+>
   {TailwindCSSProjectDocs}
 </CodeBlock>
 
-### 3. 🚧 Create `06-tailwind-theme-setup.md`
+### Create `03-libraries-tools/02-theme-configuration.mdx`
 
-🚧 TODO: Also transfer the `./tailwind-theme-setup.md` file and it's assets into a `docs/guides` directory within your project. The readme snippet links to this.
+This is not as straightforward of a process as I would like, but I believe it is useful information for future devs to have to reference within the project.
 
-🟡 TODO: When this guide is imported into the project, remove the sections/tabs that are not related to the project's framework
+1. Navigate to [https://github.com/SamuelMaddox/samuelmaddox/tree/main/docs/dev-notes/04-library-tools/05-tailwind-css](https://github.com/SamuelMaddox/samuelmaddox/tree/main/docs/dev-notes/04-library-tools/05-tailwind-css) and copy it's contents to the `docusaurus/docs/03-libraries-tools/` directory.
+2. Delete the `01-library-setup.mdx` file.
+3. In the `02-theme-configuration.mdx` file, remove the `NextJS Font Optimization` section if the project is not using NextJS.
+4. In the `02-theme-configuration.mdx` file, locate the `Theme Selector Component` section and remove the tabs and `<ThemeSelector>` markdown partials that are not relevant to the project's framework.
+5. In the `tailwind-css-partials` directory, delete `_tailwind-css-project-docs.md` and `theme-selector` partials for the frameworks that are not relevant to the project's framework.
+
+### Create `99-articles/mastering-design-system-colors` Article
+
+:::note
+I'm paranoid about broken links due to relevant articles being removed. Therefore, when I find an article that I think is relevant to a project, I like to save a copy of that article within the project's documentation.
+:::
+
+:::info
+The `03-libraries-tools/02-theme-configuration.mdx` documentation links to the following article
+:::
+
+1. Create a `docusaurus/docs/99-articles/mastering-design-system-colors` directory.
+2. Copy the [Mastering Design System Colors](https://github.com/SamuelMaddox/samuelmaddox/tree/main/docs/articles/mastering-design-system-colors) article contents into the above directory.
+3. Update the `Mastering Design System Colors` link in `03-libraries-tools/02-theme-configuration.mdx` to point to the new location.

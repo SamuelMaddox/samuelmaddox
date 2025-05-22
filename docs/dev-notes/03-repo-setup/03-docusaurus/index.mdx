@@ -5,12 +5,12 @@ import NEXTjsReadme from "!!raw-loader!./_project-docs/readme-nextjs.md";
 import AngularReadme from "!!raw-loader!./_project-docs/readme-angular.md";
 import VueReadme from "!!raw-loader!./_project-docs/readme-vue.md";
 import ProjectDocsHomepage from "!!raw-loader!./_project-docs/index.mdx";
-import ProjectDocsScriptsNEXTjs from "!!raw-loader!./_project-docs/01-scripts-nextjs.md";
-import ProjectDocsScriptsAngular from "!!raw-loader!./_project-docs/01-scripts-angular.md";
-import ProjectDocsScriptsVue from "!!raw-loader!./_project-docs/01-scripts-vue.md";
-import ProjectDocsVSCodeSettings from "!!raw-loader!./_project-docs/97-vs-code-settings.md";
-import ProjectDocsVSCodeExtensions from "!!raw-loader!./_project-docs/98-vs-code-extensions.md";
-import ProjectDocsDocusaurus from "!!raw-loader!./_project-docs/99-docusaurus.md";
+import ProjectDocsScriptsNEXTjs from "!!raw-loader!./_project-docs/scripts-nextjs.md";
+import ProjectDocsScriptsAngular from "!!raw-loader!./_project-docs/scripts-angular.md";
+import ProjectDocsScriptsVue from "!!raw-loader!./_project-docs/scripts-vue.md";
+import ProjectDocsVSCodeSettings from "!!raw-loader!./_project-docs/vs-code-settings.md";
+import ProjectDocsVSCodeExtensions from "!!raw-loader!./_project-docs/vs-code-extensions.md";
+import ProjectDocsDocusaurus from "!!raw-loader!./_project-docs/docusaurus.md";
 
 # Docusaurus
 
@@ -174,22 +174,87 @@ Create a `docusaurus/docs/01-scripts.md` file and add one of the following:
   </TabItem>
 </Tabs>
 
-### `97-vs-code-settings.md`
+### `02-code-quality`
 
-Create a `docusaurus/docs/97-vs-code-settings.md` file and add the following:
+Create a `docusaurus/docs/02-code-quality` directory and add the following:
 
-<CodeBlock language="markdown" title="97-vs-code-settings.md">
+#### `02-code-quality/_category_.json`
+
+```json title="docusaurus/docs/02-code-quality/_category_.json"
+{
+  "label": "Code Quality"
+}
+```
+
+### `03-libraries-tools`
+
+Create a `docusaurus/docs/03-libraries-tools` directory and add the following:
+
+#### `03-libraries-tools/_category_.json`
+
+```json title="docusaurus/docs/03-libraries-tools/_category_.json"
+{
+  "label": "Libraries & Tools"
+}
+```
+
+#### `03-libraries-tools/99-docusaurus.md`
+
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/03-libraries-tools/99-docusaurus.md"
+>
+  {ProjectDocsDocusaurus}
+</CodeBlock>
+
+### `04-ci-cd`
+
+Create a `docusaurus/docs/04-ci-cd` directory and add the following:
+
+#### `04-ci-cd/_category_.json`
+
+```json title="docusaurus/docs/04-ci-cd/_category_.json"
+{
+  "label": "CI/CD"
+}
+```
+
+### `98-vs-code`
+
+Create a `docusaurus/docs/98-vs-code` directory and add the following files:
+
+#### `98-vs-code/_category_.json`
+
+```json title="docusaurus/docs/98-vs-code/_category_.json"
+{
+  "label": "VS Code"
+}
+```
+
+#### `98-vs-code/01-vs-code-settings.md`
+
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/98-vs-code/01-vs-code-settings.md"
+>
   {ProjectDocsVSCodeSettings}
 </CodeBlock>
 
-### `98-vs-code-extensions.md`
+#### `98-vs-code/02-vs-code-extensions.md`
 
-<CodeBlock language="markdown" title="docusaurus/docs/98-vs-code-extensions.md">
+<CodeBlock
+  language="markdown"
+  title="docusaurus/docs/98-vs-code/02-vs-code-extensions.md"
+>
   {ProjectDocsVSCodeExtensions}
 </CodeBlock>
 
-### `99-docusaurus.md`
+### `99-articles`
 
-<CodeBlock language="markdown" title="docusaurus/docs/99-docusaurus.md">
-  {ProjectDocsDocusaurus}
-</CodeBlock>
+#### `99-articles/_category_.json`
+
+```json title="docusaurus/docs/99-articles/_category_.json"
+{
+  "label": "Articles"
+}
+```

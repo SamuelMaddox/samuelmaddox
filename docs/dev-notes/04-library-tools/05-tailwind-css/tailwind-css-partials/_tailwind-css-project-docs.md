@@ -57,12 +57,6 @@ As of 04/08/2025
 
 🚧 TODO: More comments may be useful here if/when this plugin works for Tailwind v4.0. Or maybe this section isn't needed.
 
-## 🚧 Theme Configuration
-
-🟡 TODO: Verify the link to this article and its assets work once this readme snippet is transferred to the project readme.
-
-Our theme was created by following the [Tailwind Theme Setup Guide](docs/guides/tailwind-theme-setup.md)
-
 ## Using Color Utilities
 
 :::info

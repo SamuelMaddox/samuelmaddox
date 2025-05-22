@@ -27,28 +27,33 @@ Review the [Official Lint-Staged Installation README.md](https://github.com/lint
 Install lint-staged using the following command:
 
 ```terminal
-pnpm add --save-dev husky
+pnpm add --save-dev lint-staged
 ```
 
 ## Configure
 
-Add a `.lintstagedrc.json` file and add the following, and maybe consider adding a `tsc` script if it's not included in the build script:
+Add a `.lintstagedrc.json` file and add the following:
 
 ```json title=".lintstagedrc.json"
 {
-  "*": ["pnpm prettier", "pnpm eslint"]
+  "*": ["pnpm prettier"]
 }
 ```
 
 Modify the `.husky/pre-commit` file to the following:
 
 ```txt title=".husky/pre-commit"
+pnpm lint
 pnpx lint-staged
 ```
 
+:::tip
+Consider adding a `tsc` script to husky if it's not included in the build script:
+:::
+
 ## Project Documentation
 
-### 1. Update `01-scripts.md` Documentation
+### Update `01-scripts.md` Documentation
 
 Add the following to the `docusaurus/docs/01-scripts.md` documentation
 
@@ -56,13 +61,9 @@ Add the following to the `docusaurus/docs/01-scripts.md` documentation
 | `pnpm run prepare` | This script runs automatically after you install dependencies. It triggers Husky’s installation process, which sets up Git hooks locally.|
 ```
 
-### 2. Create `94-pre-commit hooks` Documentation
+### Create `04-ci-cd/01-pre-commit hooks` Documentation
 
-TODO: Readme
-
----
-
-````markdown title="docusaurus/docs/94-pre-commit-hooks"
+````markdown title="docusaurus/docs/04-ci-cd/01-pre-commit hooks"
 # Pre-Commit Hooks
 
 :::warning
@@ -89,11 +90,11 @@ The `"prepare": "husky"` script in your `package.json` ensures Husky is set up a
 [Official Lint-Staged Installation README.md](https://github.com/lint-staged/lint-staged)
 :::
 
-**lint-staged** is a tool that runs linters (or any scripts) only on files that are staged for commit. This makes pre-commit checks fast and efficient, since only changed files are checked, not the whole codebase.
+**lint-staged** is a tool that runs scripts only on files that are staged for commit. This makes pre-commit checks fast and efficient, since only changed files are checked, not the whole codebase. Most useful for auto formatting staged files. Husky can run a prettier script, but will NOT re-stage files that have been formatted before committing.
 
 ## Configure Git Hooks
 
-- The `.husky/pre-commit` file contains the script that runs `lint-staged`.
+- The `.husky/pre-commit` file contains the scripts to run before commit, including `lint-staged`.
 - The `lintstagedrc.json` file describes what scripts to run for what glob patterns.
 
 ## Bypassing Pre-Commit Hooks
