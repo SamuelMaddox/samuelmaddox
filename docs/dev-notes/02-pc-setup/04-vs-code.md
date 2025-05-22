@@ -11,9 +11,11 @@
 - ESLint
 - Git Graph
 - Git History
+- GitHub Actions
 - GitHub Copilot
 - GitHub Copilot Chat
 - GitHub Markdown Preview
+- GitHub Pull Request
 - GitLens
 - Jest
 - Live Server (Microsoft)
