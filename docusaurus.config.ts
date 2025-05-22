@@ -10,7 +10,9 @@ const config: Config = {
   baseUrl: "/",
 
   organizationName: "SamuelMaddox",
-  projectName: "samuelmaddox",
+  projectName: "samuelmaddox.github.io",
+  deploymentBranch: "main",
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenAnchors: "warn",
