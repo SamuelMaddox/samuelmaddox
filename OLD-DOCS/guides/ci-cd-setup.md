@@ -16,9 +16,9 @@
 ````md
 **`yarn postinstall`** - This script is called by yarn after a `yarn install`. This will setup the cloned repository to use husky pre-commit hooks.
 
-## Pre-commit Hooks
+## Pre-Commit Hooks
 
-### About Pre-commit Hooks
+### About Pre-Commit Hooks
 
 > ⚠️ IMPORTANT - Committing can seem to take a while if using the Git GUI in VS Code. This is because the linting and testing is running in the background before the commit is executed. If you're committing in the terminal you'll see the pre-commit hooks running.
 
@@ -26,7 +26,7 @@ We use [Husky](https://typicode.github.io/husky/#/?id=features) and [Lint Staged
 
 To see what scripts are ran before code is commited you can look in the `./.husky/pre-commit` file. Note that one of the commands that are ran is `yarn lint-staged`. This is defined in the `package.json` in it's own section called `lint-staged`.
 
-### Bypassing Pre-commit Hooks
+### Bypassing Pre-Commit Hooks
 
 you can bypass `pre-commit` hooks using the `--no-verify` option. Example:
 
