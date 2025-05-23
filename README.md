@@ -87,7 +87,7 @@ Screenshots - [samuelmaddox.github.io/projects/hackathon-registration](https://s
 
 #### Fancy URL Shortener
 
-Screenshots - [samuelmaddox.github.io/projects/fancy-url-shortner](https://samuelmaddox.github.io/projects/fancy-url-shortner)
+Screenshots - [samuelmaddox.github.io/projects/fancy-url-shortener](https://samuelmaddox.github.io/projects/fancy-url-shortener)
 
 - ℹ️ **Problem**: An internal url shortening app was built using SharePoint Framework. The product desired a rebuild of the application utilizing more widely adopted technologies.
 - 💡 **Solution**: Sharepoint On-Premise was being migrated to SharePoint 365, providing an opportunity for a rewrite using MEAN stack technologies.
