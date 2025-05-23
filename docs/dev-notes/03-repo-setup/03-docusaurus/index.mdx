@@ -73,7 +73,8 @@ const config: Config = {
           // build. It will not work correctly with shallow clones (a common
           // default for CI systems)
           showLastUpdateTime: true,
-          editUrl: "🟡 <YOUR REPO URL>/docusaurus",
+          // 🟡 The value for `editUrl` follows the url pattern for GitHub repos. Other repos may differ
+          editUrl: "🟡 <YOUR REPO URL>/blob/main/docusaurus",
         },
         blog: false,
       } satisfies Preset.Options,

@@ -27,7 +27,7 @@ const config: Config = {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           showLastUpdateTime: true,
-          editUrl: "https://github.com/samuelmaddox/samuelmaddox/",
+          editUrl: "https://github.com/samuelmaddox/samuelmaddox/blob/main/",
         },
         blog: false,
       } satisfies Preset.Options,
