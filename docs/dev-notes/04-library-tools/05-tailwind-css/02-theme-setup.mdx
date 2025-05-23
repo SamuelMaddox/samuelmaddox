@@ -1,18 +1,10 @@
-# Tailwind Theme Setup <!-- omit in toc -->
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ThemeSelectorNEXTjs from "./tailwind-css-partials/_theme-selector-nextjs.md";
+import ThemeSelectorAngular from "./tailwind-css-partials/_theme-selector-angular.md";
+import ThemeSelectorVue from "./tailwind-css-partials/_theme-selector-vue.md";
 
-- [Base Styles](#base-styles)
-- [Color System](#color-system)
-- [Light and Dark Mode Intro](#light-and-dark-mode-intro)
-  - [🔥 HOT TAKE #1 - User's Should Have More Control](#-hot-take-1---users-should-have-more-control)
-  - [🔥 HOT TAKE #2 - Could be More Resilient](#-hot-take-2---could-be-more-resilient)
-- [Implement Light and Dark Mode](#implement-light-and-dark-mode)
-  - [NextJS Implementation](#nextjs-implementation)
-- [Configure Typography](#configure-typography)
-  - [Default Tailwind Fonts](#default-tailwind-fonts)
-  - [Customize Fonts](#customize-fonts)
-  - [Customize Base Typography](#customize-base-typography)
-  - [NextJS Font Optimization](#nextjs-font-optimization)
-- [Review and Configure Other Theme Variables](#review-and-configure-other-theme-variables)
+# 🚧 Theme Setup
 
 ## Base Styles
 
@@ -23,40 +15,53 @@ See the following documentation about defining base styles in Tailwind
 
 ## Color System
 
-> [!TIP]
-> See article [Mastering Design System Colors](../articles/mastering-design-system-colors.md) that explores the advantages of using numeric color scales and explains how to create them.
+:::tip
+See article [Mastering Design System Colors](../../../articles/mastering-design-system-colors) that explores the advantages of using numeric color scales and explains how to create them.
+:::
 
 Tailwind has an extensive, sequentially scaled color palette defined by default. In practice I have found most sites benefit from a smaller scaled color palette that uses the following meaningful names for the accent color variables (inspired by [Material UI](https://mui.com/material-ui/customization/palette/#default-colors)).
 
-- PRIMARY - For primary interface elements.
-- SECONDARY - For secondary interface elements.
-- DANGER - For elements that the user should be made aware of.
-- WARNING - For potentially dangerous actions or important messages.
-- SUCCESS - For indicating the successful completion of an action that the user triggered.
-- INFO - For highlighting neutral information.
-- GRAYSCALE - For neutral elements, accents, and backgrounds.
+- **PRIMARY** - For primary interface elements.
+- **SECONDARY** - For secondary interface elements.
+- **DANGER** - For elements that the user should be made aware of.
+- **WARNING** - For potentially dangerous actions or important messages.
+- **SUCCESS** - For indicating the successful completion of an action that the user triggered.
+- **INFO** - For highlighting neutral information.
+- **GRAYSCALE** - For neutral elements, accents, and backgrounds.
 
-> [!TIP]
-> Tailwind allows us to [override, disable, or expand the default color palette](https://tailwindcss.com/docs/colors#customizing-your-colors)
+:::tip
+Tailwind allows us to [override, disable, or expand the default color palette](https://tailwindcss.com/docs/colors#customizing-your-colors)
+:::
 
 Example of the primary sequential color scale as Tailwind theme variables:
 
 ```css
 @theme {
   --color-primary: oklch(34.8% 0.125 258.71);
-  --color-green-50: oklch(96.51% 0.01 252.81);
-  --color-green-100: oklch(93.83% 0.018 261.34);
-  --color-green-200: oklch(86.78% 0.038 256.97);
-  --color-green-300: oklch(77.67% 0.066 258.62);
-  --color-green-400: oklch(67.09% 0.1 257.79);
-  --color-green-500: oklch(49.97% 0.125 258.51);
-  --color-green-600: oklch(46.66% 0.115 258.26);
-  --color-green-700: oklch(41.48% 0.1 258.37);
-  --color-green-800: oklch(37.26% 0.088 258.17);
-  --color-green-900: oklch(27.24% 0.058 257.99);
-  --color-green-950: oklch(21.26% 0.04 258.28);
+  --color-primary-50: oklch(96.51% 0.01 252.81);
+  --color-primary-100: oklch(93.83% 0.018 261.34);
+  --color-primary-200: oklch(86.78% 0.038 256.97);
+  --color-primary-300: oklch(77.67% 0.066 258.62);
+  --color-primary-400: oklch(67.09% 0.1 257.79);
+  --color-primary-500: oklch(49.97% 0.125 258.51);
+  --color-primary-600: oklch(46.66% 0.115 258.26);
+  --color-primary-700: oklch(41.48% 0.1 258.37);
+  --color-primary-800: oklch(37.26% 0.088 258.17);
+  --color-primary-900: oklch(27.24% 0.058 257.99);
+  --color-primary-950: oklch(21.26% 0.04 258.28);
 }
 ```
+
+:::info
+`oklch()` is a modern CSS color function that represents colors using the OKLCH color space, which stands for Lightness (L), Chroma (C), and Hue (H) based on the perceptually uniform OKLab model.
+
+Why use `oklch()?`
+
+- **Perceptual Uniformity**: Changes in lightness, chroma, or hue are visually consistent, making color adjustments more predictable and accessible.
+- **Better Gradients**: Color scales and gradients look smoother and more natural compared to RGB or HSL.
+- **Accessibility**: Easier to create accessible color palettes with consistent contrast.
+- **Future-Proof**: Supported in modern browsers and recommended for design systems and theming.
+  :::
 
 Follow these steps for each color to create a custom color palette in Tailwind:
 
@@ -69,8 +74,9 @@ Follow these steps for each color to create a custom color palette in Tailwind:
 
 ## Light and Dark Mode Intro
 
-> [!NOTE]
-> Tailwind Dark Mode Documentation: [https://tailwindcss.com/docs/dark-mode](https://tailwindcss.com/docs/dark-mode)
+:::info
+Tailwind Dark Mode Documentation: [https://tailwindcss.com/docs/dark-mode](https://tailwindcss.com/docs/dark-mode)
+:::
 
 Enabled by default, Tailwind toggles dark mode by using the `prefers-color-scheme` media query. For styles to target dark mode they need to be prepended with `dark:`. Ex:
 
@@ -92,15 +98,13 @@ A better user experience would be to allow the user to manually select between `
 - To prevent FOUC (Flash Of Unstyled Content) on page load, the class or data attribute on the `<html>` element needs to be set by:
   - Server side rendering when the user's preference is stored remotely.
   - An inline script in the `<head>` when user's preference is stored in `localStorage`.
-    - This method prefers data attribute over class attribute. This is because when React defines a className on the html tag it'll replace the `.dark` class name that was added by the script defined in the `<head>` tag.
-
-Framework specific implementation guides can be found below.
+    - This method prefers data attribute over class attribute. This is because when React defines a className on the html tag it'll replace the `.dark` class name that was added by the script defined in the `<head>` tag. (🚧 TODO: I'm confused by this. does this mean the content will flash dark mode, then wrongly convert back to light?)
 
 ### 🔥 HOT TAKE #2 - Could be More Resilient
 
-> [!TIP]
-> Tailwind allows us to [override, disable, or expand the default color palette](https://tailwindcss.com/docs/colors#customizing-your-colors)
-
+:::tip
+Tailwind allows us to [override, disable, or expand the default color palette](https://tailwindcss.com/docs/colors#customizing-your-colors)
+:::
 Every component/element has to remember to define a light style AND and dark style. Ex:
 
 ```html
@@ -111,22 +115,25 @@ Every component/element has to remember to define a light style AND and dark sty
 
 That feels a bit brittle. It'd be nicer if we could use one css color variable and swap the value of that variable when in dark mode.
 
-> [!WARNING]
-> We shouldn't change the value of the variables that use 50 - 950 as part of their names. Standards dictate that 50 is the lightest shade of an accent color, and 950 is the darkest shade. Changing the values of these variables would be breaking that standard.
+:::warning
+We shouldn't change the value of the variables that use 50 - 950 as part of their names. Standards dictate that 50 is the lightest shade of an accent color, and 950 is the darkest shade. Changing the values of these variables would be breaking that standard.
+:::
 
 [Radix UI](https://www.radix-ui.com/colors/custom) provides some inspiration for how we might organize colors instead.
+
 ![dark radix color scale](assets/tailwind-theme-setup-1.png)
+
 ![light radix color scale](assets/tailwind-theme-setup-2.png)
 
 The idea is not an exact 1:1 to what Radix is doing above, but here it is. Our custom variables could use the number range 0 - 10 where the lower numbers are intended as background colors, and higher numbers are intended as foreground colors. Inverting the scale is the difference between light and dark mode.
 
-Framework specific implementation guides for this strategy can be found below.
-
 ## Implement Light and Dark Mode
+
+### Color Palette CSS
 
 Create a `./styles/color-palette.css` file. The `./styles` directory should be in the same place as the css file that contains the `@import "tailwindcss";` statement:
 
-```css
+```css title="styles/color-palette.css"
 /* ===================================== */
 /* === DESIGN SYSTEM COLOR VARIABLES === */
 /* ===================================== */
@@ -213,6 +220,8 @@ Create a `./styles/color-palette.css` file. The `./styles` directory should be i
 }
 ```
 
+### Tailwind Theme CSS
+
 Then add the following in the same css file that contains the `@import "tailwindcss";` statement:
 
 ```css
@@ -262,140 +271,27 @@ variables: https://tailwindcss.com/docs/colors#referencing-other-variables
 }
 ```
 
-### NextJS Implementation
+### Theme Selector Component
 
-🟡 TODO: When this guide is imported into the project, remove this section if the project does NOT use NextJS
-
-Create a `src/components/theme/ThemeSelector/ThemeSelector.tsx` and add the following:
-
-```tsx
-"use client";
-
-declare global {
-  interface Window {
-    changeTheme: (theme?: string) => void;
-  }
-}
-
-// 🟡 To avoid FOUC (Flash Of Unstyled Content), this script needs to be
-// defined inline in the <head>
-//
-//   <head><script>{themeSelectorHeadScript}</script></head>
-//
-// FOUC happens when the user has dark mode enabled by their system, or set in
-// local storage. Attempts were made to use `next/script`
-// <Script strategy="beforeInteractive" /> but had the following issues:
-//   - When `next/script` <Script> is placed in the <body> it runs too late
-//   - When `next/script` <Script> is placed in the <head> it runs too late
-//   - When `next/script` <Script> is placed in the `next/head` <Head> it
-//   doesn't work and the linter throws a `no-script-component-in-head` error
-export const themeSelectorHeadScript = `
-  function changeTheme(theme) {
-    switch (theme) {
-      case "dark":
-        localStorage.theme = "dark"
-        document.documentElement.setAttribute("data-theme", "dark");
-        break;
-      case "light":
-        localStorage.theme = "light"
-        document.documentElement.removeAttribute("data-theme");
-        break;
-      default:
-        localStorage.removeItem("theme");
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-          document.documentElement.removeAttribute("data-theme");
-        }
-    }
-  }
-  changeTheme(localStorage.theme);
-`;
-
-export function ThemeSelector() {
-  return (
-    <ul>
-      <li>
-        <button
-          className="text-primary-10"
-          onClick={() => window.changeTheme("dark")}
-        >
-          Dark Theme
-        </button>
-      </li>
-      <li>
-        <button
-          className="text-primary-10"
-          onClick={() => window.changeTheme("light")}
-        >
-          Light Theme
-        </button>
-      </li>
-      <li>
-        <button
-          className="text-primary-10"
-          onClick={() => window.changeTheme()}
-        >
-          Use System Theme
-        </button>
-      </li>
-    </ul>
-  );
-}
-```
-
-Modify Layout.tsx
-
-1. Add imports for `ThemeSelector` and `themeSelectorHeadScript`
-2. Modify the `<html>` to include a background color based on the colors defined above and suppress hydration warnings.
-3. Add the a comment explaining why the supress hydration warning prop is necissary
-4. Add the `themeSelectorHeadScript` inside the `<head><script>. . .</script></head>` tags
-5. Add the `<ThemeSelector />` component
-
-Example Final Result:
-
-```tsx
-. . .
-
-import {
-  ThemeSelector,
-  themeSelectorHeadScript,
-} from "@/components/theme/ThemeSelector/ThemeSelector";
-
-. . .
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // 🟡 suppressHydrationWarning={true} is set on the <html> tag because the
-  // `themeSelectorHeadScript` will add a `data-theme="dark" attribute to the
-  // <html> tag based on the client's system or local storage settings. This may
-  // result in a MISMATCH between the initial HTML generated by the server and
-  // what is first rendered in the client's browser.
-  // See https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
-
-  return (
-    <html lang="en" className="bg-primary-0" suppressHydrationWarning={true}>
-      <head>
-        <script>{themeSelectorHeadScript}</script>
-      </head>
-      <body>
-        <ThemeSelector />
-        {children}
-      </body>
-    </html>
-  );
-}
-```
+<Tabs>
+  <TabItem value="nextjs" label="NEXT.js" default>
+    <ThemeSelectorNEXTjs />
+  </TabItem>
+  <TabItem value="angular" label="Angular" default>
+    <ThemeSelectorAngular />
+  </TabItem>
+  <TabItem value="vue" label="Vue" default>
+    <ThemeSelectorVue />
+  </TabItem>
+</Tabs>
 
 ## Configure Typography
 
 ### Default Tailwind Fonts
 
-> [!NOTE]
-> Source: [Font Family Quick Reference](https://tailwindcss.com/docs/font-family#quick-reference)
+:::info
+Source: [Font Family Quick Reference](https://tailwindcss.com/docs/font-family#quick-reference)
+:::
 
 By default tailwind uses these fonts:
 
@@ -407,12 +303,14 @@ By default tailwind uses these fonts:
 
 ### Customize Fonts
 
-> [!NOTE]
-> Relevant Sources:
->
-> - [Using Custom Value](https://tailwindcss.com/docs/font-family#using-a-custom-value)
-> - [Customizing Your Theme](https://tailwindcss.com/docs/font-family#customizing-your-theme)
-> - [Overriding the default theme](https://tailwindcss.com/docs/theme#overriding-the-default-theme)
+:::info
+Relevant Sources:
+
+- [Using Custom Value](https://tailwindcss.com/docs/font-family#using-a-custom-value)
+- [Customizing Your Theme](https://tailwindcss.com/docs/font-family#customizing-your-theme)
+- [Overriding the default theme](https://tailwindcss.com/docs/theme#overriding-the-default-theme)
+
+:::
 
 ```css
 @theme {
@@ -429,13 +327,16 @@ By default tailwind uses these fonts:
 }
 ```
 
+🚧 TODO: perhaps an example of the above with real values makes sense?
+
 ### Customize Base Typography
 
-> [!NOTE]
-> Relevant Sources:
->
-> - [Adding Base Styles](https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles)
-> - [Extending Preflight](https://tailwindcss.com/docs/preflight#extending-preflight)
+:::info
+Relevant Sources:
+
+- [Adding Base Styles](https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles)
+- [Extending Preflight](https://tailwindcss.com/docs/preflight#extending-preflight)
+  :::
 
 ```css
 /* ==================================== */
@@ -501,19 +402,17 @@ By default tailwind uses these fonts:
 
 ### NextJS Font Optimization
 
-🟡 TODO: When this guide is imported into the project, remove this section if the project does NOT use NextJS
+:::info
 
-> [!NOTE]
->
-> Relevant Sources:
->
-> - NextJS Font Optimization - [Google Fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts)
-> - NextJS Font Optimization - [Local Fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts)
-> - NextJS Font Optimization - [With Tailwind CSS](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#with-tailwind-css)
+Relevant Sources:
 
-`src/app/fonts/index.ts`:
+- NextJS Font Optimization - [Google Fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts)
+- NextJS Font Optimization - [Local Fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts)
+- NextJS Font Optimization - [With Tailwind CSS](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#with-tailwind-css)
 
-```ts
+:::
+
+```ts title="src/app/fonts/index.ts"
 import { Lora, Roboto, Roboto_Mono } from "next/font/google";
 
 export const lora = Lora({
@@ -535,9 +434,7 @@ export const roboto_mono = Roboto_Mono({
 });
 ```
 
-`src/app/layout.tsx`:
-
-```tsx
+```tsx title="src/app/layout.tsx"
 import { lora, roboto, roboto_mono } from "@/app/fonts";
 import "./globals.css";
 
@@ -560,9 +457,7 @@ export default function RootLayout({
 }
 ```
 
-`src/app/globals.css`:
-
-```css
+```css title="src/app/globals.css"
 /* ================================ */
 /* === CUSTOMIZE TAILWIND THEME === */
 /* ================================ */
@@ -617,8 +512,9 @@ variables: https://tailwindcss.com/docs/colors#referencing-other-variables
 
 ## Review and Configure Other Theme Variables
 
-> [!NOTE]
-> source: [https://tailwindcss.com/docs/theme#theme-variable-namespaces](https://tailwindcss.com/docs/theme#theme-variable-namespaces)
+:::info
+source: [https://tailwindcss.com/docs/theme#theme-variable-namespaces](https://tailwindcss.com/docs/theme#theme-variable-namespaces)
+:::
 
 Theme variables are defined in namespaces and each namespace corresponds to one or more utility class or variant APIs.
 

@@ -14,19 +14,19 @@ In this article, we’ll explore the advantages of using a numeric color scale. 
 
 _This methodology has been adopted by many industry leading companies and frameworks like [Tailwind](https://tailwindcss.com/) and was popularized by [Google Material](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors) in 2014._
 
-![tailwind color pallet](assets/mastering-design-system-colors-img1.png)
+![tailwind color pallet](mastering-design-system-colors-img1.png)
 _Tailwind's color system demonstrates the numeric color scale model on a mass scale. Most projects won't need this many color options, however._
 
 ## Numeric Color Scale
 
 A numeric color scale is comprised of a primary color supplemented with tints and shades. The primary color is usually assigned the value of 500, while higher numbers (900-600) represent darker shades and lower numbers (400-50) represent lighter tints. The complete color scale for a single hue would look something like this:
 
-![sequential color scale from 950 - 50](assets/mastering-design-system-colors-img2.png)
+![sequential color scale from 950 - 50](mastering-design-system-colors-img2.png)
 _A typical color scale would include a range of major steps (900-100) and a single minor step (50). However, I recommend including a minor step on the shade end (950). This can be extremely helpful when working with dark mode—more on this later._
 
 The numeric sequence assumes that 1000 represents black, 0 represents white, and each step in the scale is an even progression along the way.
 
-![sequential color scale from 1000(black) - 0(white)](assets/mastering-design-system-colors-img3.png)
+![sequential color scale from 1000(black) - 0(white)](mastering-design-system-colors-img3.png)
 _In a proper color scale, shades are an evenly stepped progression toward black and tints are a progression towards white with the primary color in the middle._
 
 Half steps (also called minor steps) are the exact midpoint between adjacent steps (also called major steps). For example, Orange 50 would be the exact midpoint between Orange 100 and white.
@@ -72,7 +72,7 @@ Some critics of numeric color scaling assert that it creates unnecessary complex
 
 When viewing small color swatches in a design tool, it can be challenging to distinguish between colors and may feel overwhelming. However, when looking at larger areas of color, such as floods of color, the differences in color are much more noticeable and serve a purpose. Using the numeric naming convention, in-tool descriptions, and aliases/tokens can help make color selection much easier.
 
-![Figma Color Variables](assets/mastering-design-system-colors-img4.png)
+![Figma Color Variables](mastering-design-system-colors-img4.png)
 _In Figma, variables are sorted by collection in the color picker and the name appears on hover or beside the color in list view. By using the tool’s native organization, it becomes rather easy to understand and pick from the color system._
 
 ### Code Bloat
@@ -89,7 +89,7 @@ Often colors that fall naturally in the middle of a scale, like we’re building
 
 Pick one of your hues to build the first color scale for, you can circle back to the others after the first one is complete.
 
-![Example Brand Colors](assets/mastering-design-system-colors-img5.png)
+![Example Brand Colors](mastering-design-system-colors-img5.png)
 _A typical brand color system is comprised of unique neutral, primary, and accent colors._
 
 ### 2. Create Tints
@@ -104,7 +104,7 @@ _Don’t forget to use the eyedropper to flatten your tints for use in your colo
 
 Once you’ve built the 100 value, duplicate it and overlay 50% transparent white to create the half step (50).
 
-![Example Color Scale 500 - 50](assets/mastering-design-system-colors-img6.png)
+![Example Color Scale 500 - 50](mastering-design-system-colors-img6.png)
 _A normal color scale's tints include 4 major steps and a single minor step at the end._
 
 > [!TIP]
@@ -114,7 +114,7 @@ _A normal color scale's tints include 4 major steps and a single minor step at t
 
 The blending model used above for tints can be followed for shades as well, but I’ve found that dark values require more saturation to make the hue perceivable (especially when used with typography). Not to mention, without tweaks, blending to black creates colors that feel a bit muddy.
 
-![Blending Color Scale Black - 500](assets/mastering-design-system-colors-img7.png)
+![Blending Color Scale Black - 500](mastering-design-system-colors-img7.png)
 _The top half of each block shows the steps blended with black. In this example, the saturation and hue were adjusted on the bottom to make a more pleasant, and noticeable, color._
 
 With that said, starting with a black blended shade for the 900 value can be helpful to ensure the step progression is smooth and consistent. To get this, overlay 80% transparent black over your primary color. Use the eyedropper to grab the flattened color.
@@ -127,7 +127,7 @@ Most color scales do not include a 950 value, but I’ve found this to be very h
 
 To create the 950 minor step, overlay 50% transparent black on your 900 value. _You shouldn’t have to tweak this one since the 900 value was already optimized._
 
-![Example Color Scale 950 - 500](assets/mastering-design-system-colors-img8.png)
+![Example Color Scale 950 - 500](mastering-design-system-colors-img8.png)
 _A typical color scale's shades include 4 major steps with no minor steps. However, as noted, I recommend including a minor step on the end (950)._
 
 > [!TIP]
@@ -143,7 +143,7 @@ Once you’ve determined the full range of tints and shades, you can duplicate t
 
 It is important to maintain consistent saturation and lightness (HSL) values across different hues in your color system (e.g. Blue 200 vs Green 200). Doing so will make it easier to predictably use your colors in the future, both for yourself and others. For example, you could assign 50 to backgrounds, 100 to lines, 500 to key elements, and 700 to text regardless of the hue.
 
-![Example Final Color Pallet](assets/mastering-design-system-colors-img9.png)
+![Example Final Color Pallet](mastering-design-system-colors-img9.png)
 _The process outlined above was duplicated for the other primary colors, but the gray was approached a little bit differently. 950 was blended to black (50% transparent black overlayed on 900), but the remainder of the steps were blended down to white in ⅑ increments (11%)._
 
 > [!TIP]
