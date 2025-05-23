@@ -14,7 +14,7 @@ export default defineConfig([
     files: ["**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}"],
     extends: [js.configs.recommended, tseslint.configs.recommended],
     rules: {
-      "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-console": ["error", { allow: ["warn", "error"] }],
       "no-alert": "error",
       "no-restricted-syntax": [
         "error",
