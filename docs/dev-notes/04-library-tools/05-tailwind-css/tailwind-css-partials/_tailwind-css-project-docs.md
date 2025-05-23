@@ -1,36 +1,26 @@
-# Tailwind CSS Readme
-
-````md
-## Getting Started
-
-### Step 0 - Prerequisite
-
-#### Recommended IDE Setup
-
-. . . 🟡 Other VS Code Extensions . . .
-
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Enhances the Tailwind development experience by providing Visual Studio Code users with advanced features such as autocomplete, syntax highlighting, and linting.
-
-## Tailwind CSS
+# Tailwind CSS
 
 [Tailwind CSS](https://tailwindcss.com/) is a utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-> [!IMPORTANT]
-> Verify that designs utilize Tailwind defaults; except for where this application has overwritten or extended Tailwind's preflight or theme defaults. Custom spacing, sizing, colors, typography, etc, should rarely be needed
-> Useful Links:
->
-> - https://tailwindcss.com/docs/preflight
-> - https://tailwindcss.com/docs/preflight#extending-preflight
-> - https://tailwindcss.com/docs/theme
-> - https://tailwindcss.com/docs/theme#customizing-your-theme
-> - https://tailwindcss.com/docs/adding-custom-styles
+:::tip
+Verify that designs utilize Tailwind defaults; except for where this application has overwritten or extended Tailwind's preflight or theme defaults. Custom spacing, sizing, colors, typography, etc, should rarely be needed
+Useful Links:
 
-### clsx() Utility
+- [https://tailwindcss.com/docs/preflight](https://tailwindcss.com/docs/preflight)
+- [https://tailwindcss.com/docs/preflight#extending-preflight](https://tailwindcss.com/docs/preflight#extending-preflight)
+- [https://tailwindcss.com/docs/theme](https://tailwindcss.com/docs/theme)
+- [https://tailwindcss.com/docs/theme#customizing-your-theme](https://tailwindcss.com/docs/theme#customizing-your-theme)
+- [https://tailwindcss.com/docs/adding-custom-styles](https://tailwindcss.com/docs/adding-custom-styles)
 
-> [!INFO]
-> Source: [clsx() Tailwind Support](https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support)
+:::
 
-[`clsx()`](https://github.com/lukeed/clsx) is a useful utility for constructing `className` strings conditionally. You may find the `clsx/lite` module useful within Tailwind contexts. This is especially true if/when your application only composes classes in this pattern:
+## clsx() Utility
+
+:::info
+Source: [clsx() Tailwind Support](https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support)
+:::
+
+The [`clsx()`](https://github.com/lukeed/clsx) utility is useful for constructing `className` strings conditionally. You may find the `clsx/lite` module useful within Tailwind contexts. This is especially true if/when your application only composes classes in this pattern:
 
 ```ts
 import clsx from "clsx/lite";
@@ -50,20 +40,34 @@ The [Tailwind CSS IntelliSense VS Code Extension](https://marketplace.visualstud
 
 This setting has been added to the shared workspace settings file: `.vscode/settings.json`
 
-### Tailwind Prettier Plugin
+## Official Prettier Plugin
 
 [`prettier-plugin-tailwindcss`](https://www.npmjs.com/package/prettier-plugin-tailwindcss) automatically sorts classes based on their [recommended class order](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted). Refer to plugin's documentation if it doesn't work for classes in function calls or template literals, or if it does something that the team finds annoying.
 
-### Theme Configuration
+## 🚧 Unofficial ESLint Plugin
+
+:::warning
+As of 04/08/2025
+
+- There is no official ESLint plugin released for Tailwind CSS.
+- There is the unofficial but decently popular [`eslint-plugin-tailwindcss`](https://www.npmjs.com/package/eslint-plugin-tailwindcss). However it is NOT YET compatible with Tailwind v4.0
+- `@eslint/css` has a language option for custom TailwindCSS syntax. However, it has not been updated for TailwindCSS 4.0. That section of the config might need to be commented out until the language option has been updated
+
+:::
+
+🚧 TODO: More comments may be useful here if/when this plugin works for Tailwind v4.0. Or maybe this section isn't needed.
+
+## 🚧 Theme Configuration
 
 🟡 TODO: Verify the link to this article and its assets work once this readme snippet is transferred to the project readme.
 
 Our theme was created by following the [Tailwind Theme Setup Guide](docs/guides/tailwind-theme-setup.md)
 
-### Using Color Utilities
+## Using Color Utilities
 
-> [!NOTE]
-> Source: [https://tailwindcss.com/docs/colors#using-color-utilities](https://tailwindcss.com/docs/colors#using-color-utilities)
+:::info
+Source: [https://tailwindcss.com/docs/colors#using-color-utilities](https://tailwindcss.com/docs/colors#using-color-utilities)
+:::
 
 Use color utilities like `bg-white`, `border-pink-300`, and `text-gray-950` to set the different color properties of elements in your design:
 
@@ -83,10 +87,11 @@ Use color utilities like `bg-white`, `border-pink-300`, and `text-gray-950` to s
 | fill-\*         | Sets the [fill color](https://tailwindcss.com/docs/fill) of SVG elements                                      |
 | stroke-\*       | Sets the [stroke color](https://tailwindcss.com/docs/stroke) of SVG elements                                  |
 
-### Using Theme Variables
+## Using Theme Variables
 
-> [!NOTE]
-> Source: [https://tailwindcss.com/docs/theme#theme-variable-namespaces](https://tailwindcss.com/docs/theme#theme-variable-namespaces)
+:::info
+Source: [https://tailwindcss.com/docs/theme#theme-variable-namespaces](https://tailwindcss.com/docs/theme#theme-variable-namespaces)
+:::
 
 Theme variables are defined in namespaces and each namespace corresponds to one or more utility class or variant APIs.
 
@@ -110,4 +115,3 @@ Theme variables are defined in namespaces and each namespace corresponds to one 
 | --aspect-\*       | Aspect ratio utilities like aspect-video                              |
 | --ease-\*         | Transition timing function utilities like ease-out                    |
 | --animate-\*      | Animation utilities like animate-spin                                 |
-````
