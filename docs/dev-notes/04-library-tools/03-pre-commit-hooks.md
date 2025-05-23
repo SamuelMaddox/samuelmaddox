@@ -43,7 +43,7 @@ Add a `.lintstagedrc.json` file and add the following, and maybe consider adding
 Modify the `.husky/pre-commit` file to the following:
 
 ```txt title=".husky/pre-commit"
-pnpx linst-staged
+pnpx lint-staged
 ```
 
 ## Project Documentation
