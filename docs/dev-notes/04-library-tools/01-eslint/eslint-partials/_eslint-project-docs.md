@@ -6,7 +6,7 @@
 
 ## No Enums Custom Rule
 
-Our eslint config defines a custom rule that forbids the use of `enums`. The reason for this rule is best explained by this article: [Why you should use string literal unions over enums in TypeScript](https://www.typescriptcourse.com/string-literal-unions-over-enums).
+Our eslint config defines a custom rule that forbids the use of `enums`. The reason for this rule is best explained by this article: [Why you should use string literal unions over enums in TypeScript](../99-articles/why-you-should-use-string-literal-unions/index.md).
 
 ## Print Full Config
 

@@ -4,7 +4,7 @@ import ThemeSelectorNEXTjs from "./tailwind-css-partials/_theme-selector-nextjs.
 import ThemeSelectorAngular from "./tailwind-css-partials/_theme-selector-angular.md";
 import ThemeSelectorVue from "./tailwind-css-partials/_theme-selector-vue.md";
 
-# 🚧 Theme Setup
+# Theme Configuration
 
 ## Base Styles
 
@@ -98,13 +98,10 @@ A better user experience would be to allow the user to manually select between `
 - To prevent FOUC (Flash Of Unstyled Content) on page load, the class or data attribute on the `<html>` element needs to be set by:
   - Server side rendering when the user's preference is stored remotely.
   - An inline script in the `<head>` when user's preference is stored in `localStorage`.
-    - This method prefers data attribute over class attribute. This is because when React defines a className on the html tag it'll replace the `.dark` class name that was added by the script defined in the `<head>` tag. (🚧 TODO: I'm confused by this. does this mean the content will flash dark mode, then wrongly convert back to light?)
+    - This method prefers data attribute over class attribute. This is because the class attribute may be overridden by your framework (e.g. React, Angular, Vue).
 
 ### 🔥 HOT TAKE #2 - Could be More Resilient
 
-:::tip
-Tailwind allows us to [override, disable, or expand the default color palette](https://tailwindcss.com/docs/colors#customizing-your-colors)
-:::
 Every component/element has to remember to define a light style AND and dark style. Ex:
 
 ```html
@@ -115,17 +112,18 @@ Every component/element has to remember to define a light style AND and dark sty
 
 That feels a bit brittle. It'd be nicer if we could use one css color variable and swap the value of that variable when in dark mode.
 
-:::warning
-We shouldn't change the value of the variables that use 50 - 950 as part of their names. Standards dictate that 50 is the lightest shade of an accent color, and 950 is the darkest shade. Changing the values of these variables would be breaking that standard.
-:::
-
 [Radix UI](https://www.radix-ui.com/colors/custom) provides some inspiration for how we might organize colors instead.
 
-![dark radix color scale](assets/tailwind-theme-setup-1.png)
+![dark radix color scale](assets/tailwind-theme-configuration-1.png)
 
-![light radix color scale](assets/tailwind-theme-setup-2.png)
+![light radix color scale](assets/tailwind-theme-configuration-2.png)
 
-The idea is not an exact 1:1 to what Radix is doing above, but here it is. Our custom variables could use the number range 0 - 10 where the lower numbers are intended as background colors, and higher numbers are intended as foreground colors. Inverting the scale is the difference between light and dark mode.
+The idea is not an exact 1:1 to what Radix is doing above, but here it is. Our custom theme variables could use the number range 0 - 10 where the lower numbers are intended as background colors, and higher numbers are intended as foreground colors. Inverting the scale is the difference between light and dark mode. For example, in light mode the `--theme-color-primary-0` color would be set to the value of `--color-primary-50`, and in dark mode it would be set to the value of `--color-primary-950`. Likewise, `--theme-color-primary-10` would be set to `--color-primary-950` in light mode and `--color-primary-50` in dark mode.
+
+:::warning
+You might be wondering why we are using a 0 - 10 range instead of the 50 - 950 range. That's because conventions dictate that tints in a color scale should be ordered from lightest to darkest, where 50 is the lightest shade and 950 is the darkest shade.
+The 0 - 10 range defined in this guide is a custom range used to define our own color scale that is allowed to be inverted for dark mode
+:::
 
 ## Implement Light and Dark Mode
 
@@ -162,6 +160,7 @@ Create a `./styles/color-palette.css` file. The `./styles` directory should be i
   /* === Success Color Scale === */
   /* === Grayscale Color Scale === */
 }
+
 /* =================================== */
 /* === LIGHT THEME COLOR VARIABLES === */
 /* =================================== */
@@ -326,8 +325,6 @@ Relevant Sources:
   --font-code: /* Custom font-family value */ ;
 }
 ```
-
-🚧 TODO: perhaps an example of the above with real values makes sense?
 
 ### Customize Base Typography
 

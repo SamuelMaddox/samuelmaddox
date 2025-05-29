@@ -4,7 +4,7 @@
 
 Add the following ignore file path to your `eslint.config.mjs` config.
 
-```ts title="eslint.config.mjs {2,8}
+```ts title="eslint.config.mjs {2-4,8}
 const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 const docusaurusGitignorePath = fileURLToPath(
   new URL("docusaurus/.gitignore", import.meta.url)

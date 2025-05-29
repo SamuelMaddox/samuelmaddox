@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-Docusaurus is essentially a second application within our repo, with its own `package.json`. To start Docusaurus locally, run the following commands:
+Docusaurus is effectively a second application within our repo, with its own `package.json`. To start Docusaurus locally, run the following commands:
 
 ```terminal
 cd docusaurus
@@ -60,6 +60,11 @@ For more details see [Docusaurus CLI Documentation](https://docusaurus.io/docs/c
 
 VS Code automatically sets some Markdown-specific settings behind the scenes that override general user settings, such as the `"editor.wordWrap": "on"` setting. If you'd like `.mdx` to wordwrap as well add the following to your VS Code settings file:
 
-"[mdx]": {
-"editor.wordWrap": "on"
+```json
+{
+  // . . .
+  "[mdx]": {
+    "editor.wordWrap": "on"
+  }
 }
+```
