@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Mastering Design System Colors
 
 AUTHOR: Dreamten Team
@@ -31,8 +35,9 @@ _In a proper color scale, shades are an evenly stepped progression toward black 
 
 Half steps (also called minor steps) are the exact midpoint between adjacent steps (also called major steps). For example, Orange 50 would be the exact midpoint between Orange 100 and white.
 
-> [!NOTE]
-> This numeric naming convention was derived from font weight assignments in CSS, where 400 represents “normal,” 700 represents “bold,” and 100 represents “thin.”
+:::note
+This numeric naming convention was derived from font weight assignments in CSS, where 400 represents “normal,” 700 represents “bold,” and 100 represents “thin.”
+:::
 
 Initially, you may question the need for this many color values. However, in product design, subtle color variations are essential for interactive states such as button hover and focus. On screens with a lot of information, these subtle changes help guide the user by indicating the order of importance. While there are various ways to establish hierarchy, color, when combined with font and spacing, has been proven to be highly effective.
 
@@ -107,8 +112,9 @@ Once you’ve built the 100 value, duplicate it and overlay 50% transparent whit
 ![Example Color Scale 500 - 50](mastering-design-system-colors-img6.png)
 _A normal color scale's tints include 4 major steps and a single minor step at the end._
 
-> [!TIP]
-> There are numerous tools you can use to build color scales for you, but I’ve found manually building them allows for the most flexibility and easier tweaking. At the end of the article, I’ll link to a couple of tools that do a decent job at building color palettes for you.
+:::tip
+There are numerous tools you can use to build color scales for you, but I’ve found manually building them allows for the most flexibility and easier tweaking. At the end of the article, I’ll link to a couple of tools that do a decent job at building color palettes for you.
+:::
 
 ### 3. Create Shades
 
@@ -130,8 +136,9 @@ To create the 950 minor step, overlay 50% transparent black on your 900 value. _
 ![Example Color Scale 950 - 500](mastering-design-system-colors-img8.png)
 _A typical color scale's shades include 4 major steps with no minor steps. However, as noted, I recommend including a minor step on the end (950)._
 
-> [!TIP]
-> If you need to create additional half steps in your scale, overlay adjacent colors at 50% opacity.
+:::tip
+If you need to create additional half steps in your scale, overlay adjacent colors at 50% opacity.
+:::
 
 ### 4. Tweak & Repeat
 
@@ -146,8 +153,9 @@ It is important to maintain consistent saturation and lightness (HSL) values acr
 ![Example Final Color Pallet](mastering-design-system-colors-img9.png)
 _The process outlined above was duplicated for the other primary colors, but the gray was approached a little bit differently. 950 was blended to black (50% transparent black overlayed on 900), but the remainder of the steps were blended down to white in ⅑ increments (11%)._
 
-> [!TIP]
-> You can quickly test for value consistency across hues by squinting your eyes. For a more precise evaluation, convert your entire color palette to grayscale and compare.
+:::tip
+You can quickly test for value consistency across hues by squinting your eyes. For a more precise evaluation, convert your entire color palette to grayscale and compare.
+:::
 
 ## Key Takeaway
 

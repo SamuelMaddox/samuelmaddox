@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 # Why You Should Use String Literal Unions Over Enums in TypeScript
 
 _AUTHOR: Joe Previte_
