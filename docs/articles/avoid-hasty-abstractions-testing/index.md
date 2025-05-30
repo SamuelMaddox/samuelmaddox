@@ -90,7 +90,7 @@ test("lists blog posts for the logged in user", async () => {
       expect.objectContaining({
         title: "Test Post 1",
         subtitle: "This is the subtitle of Test Post 1",
-        body: "The is the body of Test Post 1",
+        body: "This is the body of Test Post 1",
       }),
     ]),
   });
