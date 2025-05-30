@@ -2,7 +2,7 @@
 
 ### Docusaurus `.gitignore`
 
-Merge the `./docusaurus/.gitignore` into the root `.gitignore` so that eslint properly ignores the same files. Example:
+Merge the `./docusaurus/.gitignore` into the root `.gitignore` so that eslint properly ignores the ignored docusaurus files. Example:
 
 ```txt title=".gitignore"
 # ...
