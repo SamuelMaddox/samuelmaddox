@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Avoid Nesting when You're Testing
 
 _AUTHOR: Kent C. Dodds_
@@ -8,7 +12,9 @@ _LINK: [https://kentcdodds.com/blog/avoid-nesting-when-youre-testing](https://ke
 
 I want to show you something. What I'm going to show is a general testing principle, applied to a React component test. So even though the example is a React one, hopefully it helps communicate the concept properly.
 
-> [!NOTE] My point isn't that nesting is bad by itself, but rather that it naturally encourages using test hooks (such as `beforeEach`) as a mechanism for code reuse which does lead to unmaintainable tests. Please read on...
+:::note
+My point isn't that nesting is bad by itself, but rather that it naturally encourages using test hooks (such as `beforeEach`) as a mechanism for code reuse which does lead to unmaintainable tests. Please read on...
+:::
 
 Here's a React component that I want to test:
 
@@ -247,7 +253,9 @@ test("shows an error message when submit is clicked and no password is provided"
 });
 ```
 
-> [!NOTE] `test` is an alias for `it` and I just prefer using `test` when I'm not nested in a `describe`.
+:::note
+`test` is an alias for `it` and I just prefer using `test` when I'm not nested in a `describe`.
+:::
 
 You'll notice that there is a bit of duplication there (we'll get to that), but look at how clear these tests are. With the exception of some test utilities and the Login component itself, the entire test is self-contained. This significantly improves the ability for us to understand what's going on in each test without having to do any scrolling around. If this component had a few dozen more tests, the benefits would be even more potent.
 
@@ -255,7 +263,7 @@ Notice also that we aren't nesting everything in a `describe` block, because it'
 
 ## Apply AHA (Avoid Hasty Abstractions)
 
-The [AHA principle](avoid-hasty-abstractions-programming.md) states that you should:
+The [AHA principle](avoid-hasty-abstractions-programming) states that you should:
 
 > _"prefer duplication over the wrong abstraction and optimize for change first."_
 
@@ -338,7 +346,7 @@ test("shows an error message when password is not provided", () => {
 
 Now we could have dozens of tests that use these simple `setup` functions, and notice also that they can be composed together to give us a similar behavior as the nested `beforeEach` that we had before if that makes sense. But we avoid having mutable variables that we have to worry about keeping track of in our mind.
 
-You can learn more about the benefits of AHA with testing from [AHA Testing](avoid-hasty-abstractions-testing.md).
+You can learn more about the benefits of AHA with testing from [AHA Testing](avoid-hasty-abstractions-testing).
 
 ## What about grouping tests?
 
@@ -352,7 +360,9 @@ This blog post isn't an attack on utilities like `beforeEach`/`afterEach`/etc. I
 
 For cleanup, sometimes you're stuck with a situation where the thing you're testing makes some changes to the global environment and you need to cleanup after it. If you try to put that code inline within your test, then a test failure would result in your cleanup not running which could then lead to other tests failing, ultimately resulting in a lot of error output that is harder to debug.
 
-> [!NOTE] This example was written before `@testing-library/react@9` which made cleanup automatic. But the concept still applies and I didn't want to rewrite the example 😅
+:::note
+This example was written before `@testing-library/react@9` which made cleanup automatic. But the concept still applies and I didn't want to rewrite the example 😅
+:::
 
 For example, React Testing Library will insert your component into the document, and if you don't cleanup after each test, then your tests can run over themselves:
 
@@ -454,7 +464,9 @@ test("example 2", () => {
 });
 ```
 
-> [!NOTE] Even better, with React Testing Library, cleanup is called after each test automatically by default. Learn more in the docs
+:::note
+Even better, with React Testing Library, cleanup is called after each test automatically by default. Learn more in the docs
+:::
 
 In addition, sometimes there are definitely good use cases for `before*`, but they're normally matched with a cleanup that's necessary in an `after*`. Like starting and stopping a server:
 

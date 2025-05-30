@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Avoid Hasty Abstractions Programming
 
 _AUTHOR: Kent C. Dodds_

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Avoid the Test User
 
 _AUTHOR: Kent C. Dodds_
@@ -8,7 +12,7 @@ _LINK: [https://kentcdodds.com/blog/avoid-the-test-user](https://kentcdodds.com/
 
 The two users your UI code has are 1) The end user that's interacting with your component and 2) the developer rendering your component. Imagine you have the following UI (taken from my Advanced React Patterns material):
 
-![User Settings Form](assets/avoid-the-test-user-img1.png)
+![User Settings Form](avoid-the-test-user-img1.png)
 
 The form component here is called `<UserSettings />`. This component exposes a certain API for the developers rendering it and the users using it.
 
@@ -28,7 +32,7 @@ So what does this have to do with testing? One thing that I talk about a lot is
 
 So knowing how your software is used is really valuable. It gives you a guide for knowing how to test the component.
 
-But far too often, I see tests which are [testing implementation details](testing-implementation-details.md) (read this before continuing if you haven't already). When you do this, you introduce a third user. The developer user and the end user are really all that matters for this component. So long as it serves those two, then it has a reason to exist. And when you're maintaining the component you need to keep those two users in mind to make sure that if you break the contract with them, you do something to handle that change.
+But far too often, I see tests which are [testing implementation details](testing-implementation-details) (read this before continuing if you haven't already). When you do this, you introduce a third user. The developer user and the end user are really all that matters for this component. So long as it serves those two, then it has a reason to exist. And when you're maintaining the component you need to keep those two users in mind to make sure that if you break the contract with them, you do something to handle that change.
 
 But as soon as you start testing things which your developer user and end user don't know or care about (implementation details), you add a third testing user, you're now having to keep that third user in your head and make sure you account for changes that affect the testing user as well.
 
@@ -38,4 +42,4 @@ And for what? To get "confidence?" But what are you getting confidence in when y
 
 Writing tests that include implementation details is all downside and no upside. Focus on the developer user and the end user and your tests will actually give you confidence that things will continue to work for them. When your tests break it becomes a cue for you to know that you have other changes to make elsewhere to account for the changes you've made. Avoid testing implementation details and you'll be much better off.
 
-P.S. There are definitely situations where mocking and testing implementation details is necessary, read more about that in [The Merits of Mocking](the-merits-of-mocking.md)
+P.S. There are definitely situations where mocking and testing implementation details is necessary, read more about that in [The Merits of Mocking](the-merits-of-mocking)

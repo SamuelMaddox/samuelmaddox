@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Testing Implementation Details
 
 _AUTHOR: Kent C. Dodds_
@@ -218,8 +222,9 @@ This is what makes our enzyme test prone to false negatives. Because **by making
 
 > _"The more your tests resemble the way your software is used, the more confidence they can give you."_  — me
 
-> [!NOTE]
-> Read more about this in [Avoid the Test User](avoid-the-test-user.md)
+:::note
+Read more about this in [Avoid the Test User](avoid-the-test-user)
+:::
 
 ## So, what about hooks
 

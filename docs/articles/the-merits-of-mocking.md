@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # The Merits of Mocking
 
 _AUTHOR: Kent C. Dodds_

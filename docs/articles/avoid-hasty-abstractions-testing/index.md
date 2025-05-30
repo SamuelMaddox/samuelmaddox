@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Avoid Hasty Abstractions Testing
 
 _AUTHOR: Kent C. Dodds_
@@ -6,9 +10,9 @@ _POSTED: April 7th, 2019_
 
 _LINK: [https://kentcdodds.com/blog/aha-testing](https://kentcdodds.com/blog/aha-testing)_
 
-The [AHA Programming Principle](avoid-hasty-abstractions-programming.md) stands for "Avoid Hasty Abstraction." I have specific feelings about how this applies to writing maintainable tests. Most of the tests that I've seen in the wild have been wildly on one side of the spectrum of abstraction: ANA (Absolutely No Abstraction), or completely DRY (Don't Repeat Yourself). (I made up ANA just now).
+The [AHA Programming Principle](../avoid-hasty-abstractions-programming.md) stands for "Avoid Hasty Abstraction." I have specific feelings about how this applies to writing maintainable tests. Most of the tests that I've seen in the wild have been wildly on one side of the spectrum of abstraction: ANA (Absolutely No Abstraction), or completely DRY (Don't Repeat Yourself). (I made up ANA just now).
 
-![The Spectrum of Abstraction](assets/avoid-hasty-abstractions-testing-img1.png)
+![The Spectrum of Abstraction](avoid-hasty-abstractions-testing-img1.png)
 
 Finding a sweet spot in the middle of the spectrum of abstraction is key to developing maintainable tests.
 
@@ -18,7 +22,9 @@ The best example of "Absolutely No Abstraction" I've seen in testing is for Expr
 
 Try to read this test and understand the one nuance between the two of them.
 
-> [!WARNING] Don't spend too long on this...
+:::warning
+Don't spend too long on this...
+:::
 
 ```tsx
 import * as blogPostController from "../blog-post";
@@ -315,11 +321,13 @@ test("submit calls the submit handler", () => {
 });
 ```
 
-> [!WARNING] Note: I would consider this pre-mature abstraction if you've only got two or three tests in the file that is using it and those tests are short. But if you've got some nuance you're testing (like error states for example), then this kind of abstraction is great.
+:::warning
+I would consider this pre-mature abstraction if you've only got two or three tests in the file that is using it and those tests are short. But if you've got some nuance you're testing (like error states for example), then this kind of abstraction is great.
+:::
 
 ## Nesting
 
-I'd recommend you give [Avoid Nesting in Tests](avoid-nesting-when-your-testing.md) a read.
+I'd recommend you give [Avoid Nesting in Tests](avoid-nesting-when-your-testing) a read.
 
 ## jest-in-case and test.each
 
