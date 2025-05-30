@@ -2,19 +2,17 @@
 
 ### Docusaurus `.gitignore`
 
-Add the following ignore file path to your `eslint.config.mjs` config.
+Merge the `./docusaurus/.gitignore` into the root `.gitignore` so that eslint properly ignores the same files. Example:
 
-```ts title="eslint.config.mjs {2-4,8}
-const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
-const docusaurusGitignorePath = fileURLToPath(
-  new URL("docusaurus/.gitignore", import.meta.url)
-);
+```txt title=".gitignore"
+# ...
 
-export default defineConfig([
-  includeIgnoreFile(gitignorePath),
-  includeIgnoreFile(docusaurusGitignorePath),
-  /* ... */
-]);
+# Docusaurus
+/docusaurus/node_modules
+/docusaurus/build
+.docusaurus
+.cache-loader
+
 ```
 
 ### Docusaurus plugin
