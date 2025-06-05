@@ -32,9 +32,6 @@ Launch offers agile software development teams that assist organizations in desi
 
 #### New Probe Request | Client – Bio-Techne
 
-Video - [youtube.com/watch?v=CYCLvpgWqqs](https://youtube.com/watch?v=CYCLvpgWqqs)\
-Screenshots - [samuelmaddox.github.io/projects/new-probe-request](https://samuelmaddox.github.io/projects/new-probe-request)
-
 - ℹ️ **Problem**: Customers often submitted invalid or incomplete requests for new probes. Additionally, requesting many probes requires multiple submissions of the same form.
 - 💡 **Solution**: New form guides customers through the probe design process. Values for later fields are enabled based on values from previous fields. The new form also allows bulk for bulk upload from CSV file.
 - 👨‍💼 **Role**: JavaScript lead of an agile development team with 2 junior devs and 2 UI/UX designers. Responsible for breaking down designs into stories. Worked on defining a design system. Mentored dev in code organization and use of code quality tools. Defined YAML pipelines for code quality checks for PRs and automated deployment on merge.
@@ -63,8 +60,6 @@ Screenshots - [samuelmaddox.github.io/projects/new-probe-request](https://samuel
 
 #### Hackathon Judging
 
-Screenshots - [samuelmaddox.github.io/projects/hackathon-judging](https://samuelmaddox.github.io/projects/hackathon-judging)
-
 - ℹ️ **Problem**: The CIO and other executives desired to be judges for the final round of ranking; but their schedules were fixed. Previous hackathons had unpredictable timelines due to inefficiencies with the manual judging process.
 - 💡 **Solution**: During judging, the app would display on the main stage what cluster a team was in, what stage the cluster would be presenting on, which clusters are currently presenting, and the winner of each cluster.
 - 💡 **Solution**: Judges will use the app to enter their rankings, and the rankings will be tallied by the app to determine the winners. Ties will trigger a tie breaking round of scoring for the judges.
@@ -75,8 +70,6 @@ Screenshots - [samuelmaddox.github.io/projects/hackathon-judging](https://samuel
 
 #### Hackathon Registration
 
-Screenshots - [samuelmaddox.github.io/projects/hackathon-registration](https://samuelmaddox.github.io/projects/hackathon-registration)
-
 - ℹ️ **Problem**: Many interested participants registered for the previous hackathons without belonging to a team.
 - 💡 **Solution**: Require team leaders to register a team, and each participant individually verify they are participating before the app marks their team as registered.
 - 💡 **Solution**: Teams that lacked the required number of verified members were made public to help interested participants discover them and pair up.
@@ -86,8 +79,6 @@ Screenshots - [samuelmaddox.github.io/projects/hackathon-registration](https://s
 - 🥇 **Result**: Had more participants (fuller teams) than previous hackathons.
 
 #### Fancy URL Shortener
-
-Screenshots - [samuelmaddox.github.io/projects/fancy-url-shortener](https://samuelmaddox.github.io/projects/fancy-url-shortener)
 
 - ℹ️ **Problem**: An internal url shortening app was built using SharePoint Framework. The product desired a rebuild of the application utilizing more widely adopted technologies.
 - 💡 **Solution**: Sharepoint On-Premise was being migrated to SharePoint 365, providing an opportunity for a rewrite using MEAN stack technologies.
