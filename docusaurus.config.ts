@@ -50,12 +50,6 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "projectsSidebar",
-          position: "left",
-          label: "Projects",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "articlesSidebar",
           position: "left",
           label: "Articles",
@@ -65,59 +59,16 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
+        {
+          href: "https://www.linkedin.com/in/samuelrmaddox/",
+          label: "LinkedIn",
+          position: "right",
+        },
       ],
     },
     footer: {
       style: "dark",
-      links: [
-        {
-          title: "Developer Notes",
-          items: [
-            {
-              label: "Developer Notes",
-              to: "/dev-notes/index",
-            },
-          ],
-        },
-        {
-          title: "Portfolio",
-          items: [
-            // {
-            //   label: "Health Plan Calculator",
-            //   to: "https://github.com/samuelmaddox/",
-            // },
-            {
-              label: "New Probe Request",
-              to: "https://samuelmaddox.github.io/projects/new-probe-request",
-            },
-            {
-              label: "Hackathon Judging",
-              to: "https://samuelmaddox.github.io/projects/hackathon-judging",
-            },
-            {
-              label: "Hackathon Registration",
-              to: "https://samuelmaddox.github.io/projects/hackathon-registration",
-            },
-            {
-              label: "Fancy URL Shortener",
-              to: "https://samuelmaddox.github.io/projects/fancy-url-shortener",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/in/samuelrmaddox/",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/SamuelMaddox",
-            },
-          ],
-        },
-      ],
+
       copyright: `Copyright © ${new Date().getFullYear()} Samuel Maddox. Built with Docusaurus.`,
     },
     prism: {
