@@ -32,18 +32,19 @@ pnpm add --save-dev lint-staged
 
 ## Configure
 
-Add a `.lintstagedrc.json` file and add the following:
+Add a `lint-staged.config.js` file and add the following:
 
-```json title=".lintstagedrc.json"
-{
-  "*": ["pnpm prettier"]
-}
+```js title="lint-staged.config.js"
+const prettierSupportedFiles =
+  "js,jsx,ts,tsx,cjs,mjs,cts,mts,json,json5,jsonc,md,markdown,mdx,yaml,yml,html,htm,css,scss,less,graphql,gql,vue,svelte,toml";
+export default {
+  [`*.{${prettierSupportedFiles}}*`]: ["eslint --fix", "prettier --write"],
+};
 ```
 
 Modify the `.husky/pre-commit` file to the following:
 
 ```txt title=".husky/pre-commit"
-pnpm lint
 pnpx lint-staged
 ```
 
@@ -95,7 +96,7 @@ The `"prepare": "husky"` script in your `package.json` ensures Husky is set up a
 ## Configure Git Hooks
 
 - The `.husky/pre-commit` file contains the scripts to run before commit, including `lint-staged`.
-- The `lintstagedrc.json` file describes what scripts to run for what glob patterns.
+- The `lint-staged.config.js` file describes what scripts to run for what glob patterns.
 
 ## Bypassing Pre-Commit Hooks
 
