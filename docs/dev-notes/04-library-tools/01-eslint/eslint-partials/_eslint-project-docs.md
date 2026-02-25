@@ -21,16 +21,17 @@ If you want to see the final rule set, all plugins, and names of all extended co
 To disable a line of code do the following:
 
 ```js
-// Explanation of why there is a disable statement
-// eslint-disable-next-line no-console
+// eslint-disable-next-line no-console -- Here's a description about why this configuration is necessary.
 console.log("bar");
 ```
 
 To disable a block of code do the following:
 
 ```js
-// Explanation of why there is a disable statement
-/* eslint-disable no-console */
+/* eslint-disable no-console--
+ * Here's a very long description about why this configuration is necessary
+ * along with some additional information
+ **/
 console.log("bar");
 /* eslint-enable no-console */
 ```
