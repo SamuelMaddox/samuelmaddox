@@ -2,90 +2,78 @@
 
 - 🏠 **Location**: Columbus, OH 43016
 - 💼 **LinkedIn**: [linkedin.com/in/samuelrmaddox](https://linkedin.com/in/samuelrmaddox)
-- 🌐 **Website**: [samuelmaddox.github.io](https://samuelmaddox.github.io)
+- 🖥️ **Website**: [samuelmaddox.github.io](https://samuelmaddox.github.io)
 
 ## LEAD FULL STACK SOFTWARE ENGINEER
 
-8+ years of experience leading teams in delivering business-critical applications. Adept at developing code that follows SOLID principles. Committed to encouraging high code quality using branch policies. Capable of building CI/CD pipelines to streamline testing and deployment of applications. Skilled at breaking down complex features and designs into detailed but manageable stories and tasks.
+Lead Full Stack Software Engineer with 8+ years of experience delivering and modernizing business-critical applications for enterprise clients. Trusted to lead teams, modernize legacy systems, and design scalable, cloud-native solutions using Serverless Node.js, React, Angular, Vue, and CI/CD pipelines on AWS and Azure. Strong advocate for code quality, automated testing, and maintainable, reliable architectures.
 
 ## SKILLS
 
-- 🌎 **Languages**: JavaScript | TypeScript | HTML | CSS | JSON | YAML
-- 📚 **Frameworks**: React | NEXT.js | Angular | Vue | Node.js | Express.js
-- 🛠️ **Tools**: Jest | Testing Library | ESLint | Prettier | TailwindCSS | TurboRepo | Git | GitHub Copilot | NPM
-- ☁️ **Cloud Technologies**: Azure | Azure DevOps | Amazon Web Services | GitHub Actions
-- 🏛️ **Methodologies**: RESTful API | Monorepo | CI/CD | A11Y | Design Systems | Agile | SCRUM | Kanban | SOLID | TDD | Trunk Based Branching | GitFlow
+- **Languages**: JavaScript | TypeScript | HTML | CSS | JSON | YAML
+- **Frontend**: React | Angular| Vue| TailwindCSS
+- **Backend**: Node.js | Express.js | RESTful APIs | Serverless Architectures
+- **Cloud & DevOps**: AWS (Lambda, SAM, S3, API Gateway, CodePipeline, CloudWatch) | Azure (Functions, Static Web Apps, Pipelines) | GitHub Actions
+- **Testing & Quality**: Jest | Testing Library | ESLint | Prettier | SonarQube
+- **Practices**: CI/CD | Monorepos | SOLID | TDD | Accessibility (A11Y) | Agile | Scrum, Kanban
+- **Tools**: Git | GitHub Copilot | TurboRepo | NPM
 
 ## PROFESSIONAL EXPERIENCE
 
-### Lead Software Engineer | Launch by NTT Data | Feb 2020 - Present
+### Lead Full Stack Software Engineer | Launch by NTT Data | Feb 2020 - Present
 
-Launch offers agile software development teams that assist organizations in designing, developing, and optimizing digital products and platforms. This service aims to enhance user experiences and promote business growth.
+Launch offers agile software development teams that assist organizations in designing, developing, and optimizing digital products and platforms. This service aims to enhance user experience and promote business growth.
+
+#### Service Outage Reporting | Pacific Gas and Electric (PG&E)
+
+- Rebuilt the backup outage API as a robust, serverless Node.js API using AWS SAM, creating a new TypeScript-ready project and aligning it with the primary system.
+- Migrated the primary outage API from CommonJS with manual build/deploy to AWS SAM with ES Modules, preparing for a future incremental TypeScript conversion.
+- Implemented RESTful APIs and optimized local development, build, and deployment workflows, enabling faster iteration and more maintainable services.
+- Tech: Node.js, AWS, SAM, Lambda, Gateway, CodePipeline, CloudWatch, TypeScript, ESBuild, SAM CLI, RESTful APIs, GitHub Copilot
 
 #### Probe Product Management | Client – Bio-Techne
 
-- ℹ️ **Problem**: Products and pricing catalogs are managed using excel sheets.
-- 💡 **Solution**: Create simple CRUD applications allowing the client to update and store product and pricing data in a database.
-- 👨‍💼 **Role**: JavaScript lead of an agile development team with 2 junior devs. Responsible for creating designs and breaking them down into stories. Mentored devs in code organization and use of code quality tools. Documented the ins of outs of TurboRepo. Defined YAML pipelines for code quality checks for PRs and automated deployment on merge.
-- 🎯 **Challenges**: Researching how monorepos are set up (NX vs TurboRepo) and moving the partially built apps into a TurboRepo while development was still ongoing.
-- 💻 **Technologies**: Vue, TypeScript, PrimeVue, TailwindCSS, Jest, Testing Library, ESLint, Prettier, TurboRepo, Trunk Based Branching, Azure DevOps, Branch Policies, Azure Pipelines, Azure Static Web Apps.
+- Led a frontend/backend team (2 junior developers) to build CRUD applications that replaced Excel-based product and pricing management, improving data accuracy and operational efficiency.
+- Migrated partially built apps into a TurboRepo monorepo, implementing shared libraries, code quality checks for PRs, and automated build/deploy.
+- Mentored developers in code organization, testing, and best practices, while documenting monorepo structure for future team onboarding.
+- Tech: Vue, TypeScript, PrimeVue, TailwindCSS, Jest, Testing Library, ESLint, Prettier, TurboRepo, Azure Static Web Apps, Functions, Pipelines, DevOps
 
 #### New Probe Request | Client – Bio-Techne
 
-- ℹ️ **Problem**: Customers often submitted invalid or incomplete requests for new probes. Additionally, requesting many probes requires multiple submissions of the same form.
-- 💡 **Solution**: New form guides customers through the probe design process. Values for later fields are enabled based on values from previous fields. The new form also allows bulk for bulk upload from CSV file.
-- 👨‍💼 **Role**: JavaScript lead of an agile development team with 2 junior devs and 2 UI/UX designers. Responsible for breaking down designs into stories. Worked on defining a design system. Mentored dev in code organization and use of code quality tools. Defined YAML pipelines for code quality checks for PRs and automated deployment on merge.
-- 🎯 **Challenges**: Managing cross-field and cross-field-set validation in a way that allowed for future changes. State management for when different sections of the form would appear. Validating csv bulk upload and allowing quick edits before submission.
-- 💻 **Technologies**: Angular and TypeScript, A11Y guidelines, Jest, Testing Library, ESLint, Prettier, Trunk Based Branching, Azure DevOps, Branch Policies, Azure Pipelines, Azure Static Web Apps.
-- 🥇 **Result**: 90% code coverage for unit tests. Received positive feedback from the client and customers. Saved thousands of hours of manual effort.
+- Led a cross-functional team (2 developers, 2 UI/UX designers) to develop a dynamic, accessible probe request form, including guided field logic and bulk CSV upload, reducing invalid submissions and saving thousands of hours of manual effort.
+- Defined a design system, broke designs into stories, and mentored developers on code organization, testing, and CI/CD best practices, achieving 90% unit test coverage.
+- Implemented automated pipelines and PR quality checks, ensuring maintainable, scalable code and smooth deployments.
+- Tech: Angular, TypeScript, A11Y guidelines, Jest, Testing Library, ESLint, Prettier, Azure Static Web Apps, Functions, Pipelines, DevOps
 
 #### Patient Registration | Client – Large Healthcare Provider
 
-- ℹ️ **Problem**: Registration into hospital required patients filling out physical forms that were then entered manually into a computer.
-- 💡 **Solution**: Patients fill out information on a mobile app, and the registration specialist monitors their progress through a web application.
-- 👨‍💼 **Role**: Onboarded near the end of the development as sole developer to wrap up development of the registration tracking application.
-- 🎯 **Challenges**: The client’s QA team didn’t start until the end of development. Previous developers didn’t install code quality tools. No unit tests were implemented. Code didn’t follow SOLID principles. Many bugs and missed requirements were found by QA team.
-- 💻 **Technologies**: React, Jest, Testing Library, ESLint, Prettier, GitHub.
-- 🥇 **Result**: Ended the engagement with a working application. Code quality tools were added and enforced using git hooks. Refactoring and unit tests added to any of the code I touched while fixing bugs.
+- Onboarded late in development to resolve critical bugs blocking launch of a patient registration tracking app, ensuring the system could go live on schedule.
+- Refactored existing code to better align with SOLID principles and implemented automated code quality checks, improving maintainability and team workflow.
+- Delivered a stable, fully functional application that digitized patient registration and progress monitoring.
+- Tech: React, Jest, Testing Library, ESLint, Prettier, GitHub
 
 #### Jump Seat Booking | Client – UPS
 
-- ℹ️ **Problem**: The application that was used to book pilots and other travelers onto an airplane’s jump seats was an outdated console app that only administrators could use.
-- 💡 **Solution**: Rewrite application into a web application using modern technology. Users are permitted to book and modify their own flights. Administrators have the authority to alter any bookings, user information, and flight details.
-- 👨‍💼 **Role**: Partnered with another developer to design and implement the UI portion of the application. We were also responsible for taking business requirements and converting them to stories.
-- 🎯 **Challenges**: The table used to display flights was complicated, especially when displaying flights with multiple legs. It had expanding rows for more details about each flight, and a design that helped to indicate which flights had multiple legs. Material UI performance dwindled for large searches. This resulted in a refactoring of the table to a custom component, along with API contract changes. This improved performance significantly.
-- 💻 **Technologies**: Angular, Angular Material, SonarQube, ESLint, Prettier, GitFlow, Azure DevOps
+- Partnered with another developer to modernize a legacy console app into a web application, allowing pilots to book and modify flights while enabling administrators to manage all bookings and user data.
+- Designed and implemented a complex flight table with multi-leg support, refactoring Material UI components and updating API contracts to improve performance for large searches.
+- Translated business requirements into stories, delivering a functional, intuitive interface that improved usability for both pilots and administrators.
+- Tech: Angular, TypeScript, Angular Material, SonarQube, ESLint, Prettier, Azure DevOps
 
-### Software Engineer | Nationwide | Aug 2017 – Jan 2020
+### Full Stack Software Engineer | Nationwide | Aug 2017 – Jan 2020
 
-#### Hackathon Judging
+#### Hackathon Event Management
 
-- ℹ️ **Problem**: The CIO and other executives desired to be judges for the final round of ranking; but their schedules were fixed. Previous hackathons had unpredictable timelines due to inefficiencies with the manual judging process.
-- 💡 **Solution**: During judging, the app would display on the main stage what cluster a team was in, what stage the cluster would be presenting on, which clusters are currently presenting, and the winner of each cluster.
-- 💡 **Solution**: Judges will use the app to enter their rankings, and the rankings will be tallied by the app to determine the winners. Ties will trigger a tie breaking round of scoring for the judges.
-- 👨‍💼 **Role**: Determined the business requirements, broke down the stories, designed and implemented the front end, and coached 2 other part time developers with no web engineering experience on how to build the back end using model controller architecture, database schema design, and RESTful API contracts.
-- 🎯 **Challenges**: Judges would NOT get a chance to test run the application before judgement day. The app needed to be intuitive to use, but no UI/UX designer was assigned to the project.
-- 💻 **Technologies**: React, Express.js, Node.js, MongoDB, ESLint, Prettier, Jest, Testing Library, Amazon Web Services, EC2, S3, Route 53, CodePipeline, GitFlow.
-- 🥇 **Result**: Judging was smoother and faster than any previous hackathon. The final round started right on time pleasing the executives.
+- Led requirements definition, story breakdown, and front-end development for a web app that enforced team registration, verified participation of members, and digitized judging with automated scoring and tie breaking.
+- Mentored two part-time developers with no web experience in backend architecture, database design, and RESTful APIs, ensuring high-quality delivery.
+- Delivered faster, on-time judging and increased participant engagement with more complete teams, improving executive satisfaction.
+- Tech: React, Node.js, Express.js, MongoDB, AWS (EC2, S3, Route 53, CodePipeline), ESLint, Prettier, Jest, Testing Library, GitFlow
 
-#### Hackathon Registration
+#### Internal URL Shortening App
 
-- ℹ️ **Problem**: Many interested participants registered for the previous hackathons without belonging to a team.
-- 💡 **Solution**: Require team leaders to register a team, and each participant individually verify they are participating before the app marks their team as registered.
-- 💡 **Solution**: Teams that lacked the required number of verified members were made public to help interested participants discover them and pair up.
-- 👨‍💼 **Role**: Determined the business requirements, broke down the stories, designed and implemented the front end, and coached 2 other part time developers with no web engineering experience on how to build the back end using model controller architecture, database schema design, and RESTful API contracts.
-- 🎯 **Challenges**: Managing registration state. Teams were NOT registered until they had enough confirmed members. Teams were put on warning if the lost members after being registered. Also management of a waitlist based on registration state changes.
-- 💻 **Technologies**: React, Express.js, Node.js, MongoDB, ESLint, Prettier, Jest, Testing Library, Amazon Web Services, EC2, S3, Route 53, CodePipeline, GitFlow.
-- 🥇 **Result**: Had more participants (fuller teams) than previous hackathons.
-
-#### Fancy URL Shortener
-
-- ℹ️ **Problem**: An internal url shortening app was built using SharePoint Framework. The product desired a rebuild of the application utilizing more widely adopted technologies.
-- 💡 **Solution**: Sharepoint On-Premise was being migrated to SharePoint 365, providing an opportunity for a rewrite using MEAN stack technologies.
-- 👨‍💼 **Role**: I was the sole developer/designer for this rewrite as a new hire fresh out of college.
-- 🎯 **Challenges**: I had never built anything using MongoDB, Express.js, AngularJS, or Node.js. Senior devs were very busy with the migration of sharepoint, leaving me mostly on my own.
-- 💻 **Technologies**: MongoDB, Express.js, AngularJS, or Node.js, Amazon Web Services, EC2, Route 53, CodePipeline, GitFlow
-- 🥇 **Result**: Successfully rewrote and deployed the application with a modernized UI/UX, and a new link usage analytics feature for users and admins.
+- Rebuilt legacy SharePoint Framework URL shortening app using MEAN stack (MongoDB, Express.js, AngularJS, Node.js) during company migration to SharePoint 365.
+- Sole developer responsible for full-stack development, UI/UX design, and deployment pipelines on AWS, delivering a modernized, maintainable solution.
+- Implemented link usage analytics for users and admins, improving usability and adoption.
+- Technologies: MongoDB, Express.js, AngularJS, Node.js, AWS (EC2, Route 53, CodePipeline), GitFlow.
 
 ## EDUCATION & CERTIFICATIONS
 
