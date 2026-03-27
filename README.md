@@ -20,7 +20,7 @@ Lead Full Stack Software Engineer with 8+ years of experience delivering and mod
 
 ## PROFESSIONAL EXPERIENCE
 
-### Lead Full Stack Software Engineer | Launch by NTT Data | Feb 2020 - Present
+### Lead Full Stack Software Engineer | Launch by NTT Data | Feb 2020 - Mar 2026
 
 Launch offers agile software development teams that assist organizations in designing, developing, and optimizing digital products and platforms. This service aims to enhance user experience and promote business growth.
 

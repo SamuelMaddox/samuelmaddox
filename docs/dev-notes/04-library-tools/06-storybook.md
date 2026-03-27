@@ -1,3 +1,0 @@
-# 🚧 Storybook
-
-## Guide coming soon™
