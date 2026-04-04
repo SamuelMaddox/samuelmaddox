@@ -11,7 +11,7 @@ Lead Full Stack Software Engineer with 8+ years of experience delivering and mod
 ## SKILLS
 
 - **Languages**: JavaScript | TypeScript | HTML | CSS | JSON | YAML
-- **Frontend**: React | Angular| Vue| TailwindCSS
+- **Frontend**: React | Angular| Vue | TailwindCSS
 - **Backend**: Node.js | Express.js | RESTful APIs | Serverless Architectures
 - **Cloud & DevOps**: AWS (Lambda, SAM, S3, API Gateway, CodePipeline, CloudWatch) | Azure (Functions, Static Web Apps, Pipelines) | GitHub Actions
 - **Testing & Quality**: Jest | Testing Library | ESLint | Prettier | SonarQube
@@ -24,51 +24,59 @@ Lead Full Stack Software Engineer with 8+ years of experience delivering and mod
 
 Launch offers agile software development teams that assist organizations in designing, developing, and optimizing digital products and platforms. This service aims to enhance user experience and promote business growth.
 
-#### Service Outage Reporting | Pacific Gas and Electric (PG&E)
+#### Service Outage Reporting | Pacific Gas and Electric (PG&E) | 9 months
 
 - Rebuilt the backup outage API as a robust, serverless Node.js API using AWS SAM, creating a new TypeScript-ready project and aligning it with the primary system.
 - Migrated the primary outage API from CommonJS with manual build/deploy to AWS SAM with ES Modules, preparing for a future incremental TypeScript conversion.
 - Implemented RESTful APIs and optimized local development, build, and deployment workflows, enabling faster iteration and more maintainable services.
 - Tech: Node.js, AWS, SAM, Lambda, Gateway, CodePipeline, CloudWatch, TypeScript, ESBuild, SAM CLI, RESTful APIs, GitHub Copilot
 
-#### Probe Product Management | Client – Bio-Techne
+#### Probe Product Management | Client – Bio-Techne | 12 months
 
 - Led a frontend/backend team (2 junior developers) to build CRUD applications that replaced Excel-based product and pricing management, improving data accuracy and operational efficiency.
 - Migrated partially built apps into a TurboRepo monorepo, implementing shared libraries, code quality checks for PRs, and automated build/deploy.
 - Mentored developers in code organization, testing, and best practices, while documenting monorepo structure for future team onboarding.
 - Tech: Vue, TypeScript, PrimeVue, TailwindCSS, Jest, Testing Library, ESLint, Prettier, TurboRepo, Azure Static Web Apps, Functions, Pipelines, DevOps
 
-#### New Probe Request | Client – Bio-Techne
+#### New Probe Request | Client – Bio-Techne | 12 months
 
 - Led a cross-functional team (2 developers, 2 UI/UX designers) to develop a dynamic, accessible probe request form, including guided field logic and bulk CSV upload, reducing invalid submissions and saving thousands of hours of manual effort.
 - Defined a design system, broke designs into stories, and mentored developers on code organization, testing, and CI/CD best practices, achieving 90% unit test coverage.
 - Implemented automated pipelines and PR quality checks, ensuring maintainable, scalable code and smooth deployments.
 - Tech: Angular, TypeScript, A11Y guidelines, Jest, Testing Library, ESLint, Prettier, Azure Static Web Apps, Functions, Pipelines, DevOps
 
-#### Patient Registration | Client – Large Healthcare Provider
+#### Patient Registration | Client – HCA | 9 months
 
 - Onboarded late in development to resolve critical bugs blocking launch of a patient registration tracking app, ensuring the system could go live on schedule.
 - Refactored existing code to better align with SOLID principles and implemented automated code quality checks, improving maintainability and team workflow.
 - Delivered a stable, fully functional application that digitized patient registration and progress monitoring.
 - Tech: React, Jest, Testing Library, ESLint, Prettier, GitHub
 
-#### Jump Seat Booking | Client – UPS
+#### Jump Seat Booking | Client – UPS | 13 months
 
 - Partnered with another developer to modernize a legacy console app into a web application, allowing pilots to book and modify flights while enabling administrators to manage all bookings and user data.
 - Designed and implemented a complex flight table with multi-leg support, refactoring Material UI components and updating API contracts to improve performance for large searches.
 - Translated business requirements into stories, delivering a functional, intuitive interface that improved usability for both pilots and administrators.
 - Tech: Angular, TypeScript, Angular Material, SonarQube, ESLint, Prettier, Azure DevOps
 
+#### Chatbot Prompt Builder | Client – Invesco | 12 months
+
+- Designed a guided search experience using fuzzy search to translate partial and imprecise user inputs into structured chatbot prompts, enabling more intuitive interactions.
+- Built reusable styled components that supported consistent UI patterns across web and mobile applications.
+- Integrated frontend workflows with backend services hosted on Azure, defining and consuming RESTful API contracts to ensure reliable data flow.
+- Tech: React, React Native, Styled Components, Fuse.js, Jest, Testing Library, ESLint, Prettier, RESTful API, Azure
+  DevOps
+
 ### Full Stack Software Engineer | Nationwide | Aug 2017 – Jan 2020
 
-#### Hackathon Event Management
+#### Hackathon Event Management | 20 months
 
 - Led requirements definition, story breakdown, and front-end development for a web app that enforced team registration, verified participation of members, and digitized judging with automated scoring and tie breaking.
 - Mentored two part-time developers with no web experience in backend architecture, database design, and RESTful APIs, ensuring high-quality delivery.
 - Delivered faster, on-time judging and increased participant engagement with more complete teams, improving executive satisfaction.
 - Tech: React, Node.js, Express.js, MongoDB, AWS (EC2, S3, Route 53, CodePipeline), ESLint, Prettier, Jest, Testing Library, GitFlow
 
-#### Internal URL Shortening App
+#### Internal URL Shortening App | 9 months
 
 - Rebuilt legacy SharePoint Framework URL shortening app using MEAN stack (MongoDB, Express.js, AngularJS, Node.js) during company migration to SharePoint 365.
 - Sole developer responsible for full-stack development, UI/UX design, and deployment pipelines on AWS, delivering a modernized, maintainable solution.
