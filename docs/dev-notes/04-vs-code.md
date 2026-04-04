@@ -7,12 +7,12 @@
 - Auto Rename Tag
 - Azure Pipelines
 - Better Comments
+- Claude Code for VS Code
 - Code Spell Checker
 - ESLint
 - Git Graph
 - Git History
 - GitHub Actions
-- GitHub Copilot
 - GitHub Copilot Chat
 - GitHub Markdown Preview
 - GitHub Pull Request
@@ -43,7 +43,7 @@
 ```json
 {
   "workbench.startupEditor": "newUntitledFile",
-  "editor.fontSize": 13,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.quickSuggestionsDelay": 500,
@@ -61,13 +61,15 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "git.autofetch": true,
-  "git.blame.editorDecoration.enabled": true,
-  "git.blame.statusBarItem.enabled": true,
   "git.blame.editorDecoration.template": "${authorName} (${authorDateAgo}) • ${subject}  ",
   "open-in-browser.default": "chrome",
   "eslint.useFlatConfig": true,
   "[mdx]": {
     "editor.wordWrap": "on"
-  }
+  },
+  "gitlens.views.commitDetails.files.layout": "list",
+  "git.blame.editorDecoration.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.codeLens.enabled": false
 }
 ```
